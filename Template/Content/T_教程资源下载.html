@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<!--
+ * Copyright statement *
+ * This site template is provided free of charge by WEBJIKE
+ * Official Website: http://webjike.com
+ * GitHub：https://github.com/xiaodai945/webjike
+-->
+<html lang="zh-cn">
+  <head>
+    <stl:include file="@/include/header.html"></stl:include>
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+    <div class="alert alert-danger">您正在使用 <strong>过时的</strong> 浏览器. 是时候 <a href="http://browsehappy.com/">更换一个更好的浏览器</a> 来提升用户体验.</div>
+    <![endif]-->
+    <!--头部导航条-->
+    <header>
+      <stl:include file="@/include/nav.html"></stl:include>
+    </header>
+    <div id="content">
+      <!--导航条-->
+      <div class="mask"></div>
+      <div class="left-bar">
+        <div class="header"><h2>导航目录</h2></div>
+        <nav class="menu" data-ride="menu">
+          <ul id="treeMenu" class="tree tree-menu" data-ride="tree">
+            <stl:channels channelIndex="导航目录">
+              <li>
+                <stl:a><i class="{stl:channel type=icon_class}"></i>{stl:channel type=Title}</stl:a>
+                <ul>
+                  <!--从首页向下循化3级栏目列表：0为首页-->
+                  <stl:channels>
+                    <!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><stl:a href="@/{stl:channel type=mao_link_id upLevel=1}.html{stl:channel type=mao_link}"><i class="{stl:channel type=icon_class}"></i>{stl:channel type=Title}</stl:a></li>
+                  </stl:channels>
+                </ul>
+              </li>
+            </stl:channels>
+           </ul>
+        </nav>
+        <div class="menu-about">
+          <p>{stl:value type=menu_adout}</p>
+          <!--版权申明，请遵守MIT开源协议，勿删除-->
+          <p>Powered by <a href="http://webjike.com" target="_blank" style="color:#98c1ff">小呆导航</a></p>
+        </div>
+      </div>
+      <!--内容-->
+      <div class="main">
+        <div class="container mainContent">
+          <!--内容banner-->
+          <div class="row article-box download">
+            <div class="col-md-8">
+              <article class="article">
+                <!-- 文章头部 -->
+                <h2>{content.Title}</h2>
+                <div class="row xz-info">
+                  <div class="col-lg-5 col-md-12 col-sm-6"><img src="{content.ImageUrl}" alt="{content.Title}"></div>
+                  <div class="col-lg-7 col-md-12 col-sm-6">
+                    <ul class="text-ellipsis">
+                      <li><span class="sub">涉及领域：</span><span>{stl:content type=download_type1}</span></li>
+                      <li><span class="sub">教程阶段：</span><span>{stl:content type=download_type2}</span></li>
+                      <li><span class="sub">教程类型：</span><span>{stl:content type=download_type3}</span></li>
+                      <li><span class="sub">下载方式：</span><span>{stl:content type=download_type4}</span></li>
+                      <li><span class="sub">提取密码：</span><span>{stl:content type=download_type5}</span></li>
+                      <li><span class="sub">更新时间：</span><span>{content.AddDate}</span></li>
+                    </ul>
+                    <a href="{content.FileUrl}" class="btn-link2" target="_blank"><i class="icon icon-download-alt"></i>网盘下载</a>
+                    <div class="bdsharebuttonbox"><span class="fenxiang">分享：</span><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a><a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a></div><script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+                  </div>
+                </div>
+                <!-- 文章正文部分 -->
+                <section class="article-con">
+                  {content.Content}
+                </section>
+              </article>
+              <div class="comment-box">
+                <div id="SOHUCS" sid="{content.Id}"></div>
+                <script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js" ></script>
+                <script type="text/javascript"> window.changyan.api.config({ appid: 'cysMRaVDi', conf: 'prod_497bf64d75ce00fed95cba1232778dc2' }); </script>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="row">
+                <div class="col-md-12 col-sm-6">
+                  <div class="widget hot-download">
+                    <h3>热门下载</h3>
+                    <stl:channels channelIndex="教程资源">
+                      <stl:contents isRecommend="true">
+                        <stl:a title="{stl:content type=Title}">
+                          <stl:image type="hot_download_icon"></stl:image>
+                          <p class="text-ellipsis">{stl:content type="Title"}</p>
+                          <span>{content.AddDate}</span>
+                        </stl:a>
+                      </stl:contents>
+                    </stl:channels>
+                  </div>
+                </div>
+                <div class="col-md-12 col-sm-6">
+                  <div class="widget hot-news">
+                    <h3>推荐文章</h3>
+                    <ul>
+                      <stl:contents channelIndex="个人博客"  isRecommend="true">
+                        <li><stl:a class="text-ellipsis" title="{content.Title}">{content.Title}</stl:a></li>
+                      </stl:contents>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--页脚-->
+        <stl:include file="@/include/footer.html"></stl:include>
+      </div><!--内容区域-->
+    </div>
+    <div id="get-top" title="回到顶部"><i class="icon icon-arrow-up"></i></div>
+    <!--[if lt IE 9]>
+    <script src="dist/lib/ieonly/html5shiv.js"></script>
+    <script src="dist/lib/ieonly/respond.js"></script>
+    <![endif]-->
+    <!-- jQuery (ZUI中的Javascript组件依赖于jQuery) -->
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <!-- ZUI Javascript组件 -->
+    <script src="{Stl.SiteUrl}/dist/js/zui.js"></script>
+    <script src="{Stl.SiteUrl}/layer/layer.js"></script>
+    <script src="{Stl.SiteUrl}/js/js.js"></script>
+  </body>
+</html>
+
+

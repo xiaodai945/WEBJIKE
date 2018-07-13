@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--
+ * Copyright statement *
+ * This site template is provided free of charge by WEBJIKE
+ * Official Website: http://webjike.com
+ * GitHub：https://github.com/xiaodai945/webjike
+-->
+<html lang="zh-cn">
+  <head>
+    <!--头部信息-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{channel.Title} | {stl.SiteName}</title>
+    <meta name="keywords" content="{stl:Channel type=Keywords topLevel=1}"/>
+    <meta name="description" content="{stl:channel type=Description topLevel=1}"/>
+    <!-- zui -->
+    <link rel="shortcut icon"  type="image/x-icon" href="{Stl.SiteUrl}/favicon.png">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/zui/1.8.1/css/zui.min.css">
+    <link href="{Stl.SiteUrl}/css/style.css" rel="stylesheet">
+    <link href="{Stl.SiteUrl}/css/media.css" rel="stylesheet">
+    <link href="{Stl.SiteUrl}/css/font-awesome.min.css" rel="stylesheet">
+    <style type="text/css">
+       .footer{margin: 0; background: #fef0eb; border: 0}
+    </style>
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+    <div class="alert alert-danger">您正在使用 <strong>过时的</strong> 浏览器. 是时候 <a href="http://browsehappy.com/">更换一个更好的浏览器</a> 来提升用户体验.</div>
+    <![endif]-->
+    <!--头部导航条-->
+    <header>
+      <stl:include file="@/include/nav.html"></stl:include>
+    </header>
+    <div id="content">
+      <div class="adout">
+        <section class="adout-con adout-con2">
+          <div class="mainContent">
+            <div class="text-box">{channel.Content}</div>
+          </div>
+        </section>
+      </div>
+      <!--页脚-->
+      <stl:include file="@/include/footer.html"></stl:include>
+    </div>
+    <div id="get-top" title="回到顶部"><i class="icon icon-arrow-up"></i></div>
+    <!--[if lt IE 9]>
+    <script src="dist/lib/ieonly/html5shiv.js"></script>
+    <script src="dist/lib/ieonly/respond.js"></script>
+    <![endif]-->
+    <!-- jQuery (ZUI中的Javascript组件依赖于jQuery) -->
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <!-- ZUI Javascript组件 -->
+    <script src="{Stl.SiteUrl}/dist/js/zui.js"></script>
+    <script src="{Stl.SiteUrl}/js/js.js"></script>
+  </body>
+</html>

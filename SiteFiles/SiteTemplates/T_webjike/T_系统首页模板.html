@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!--
+ * Copyright statement *
+ * This site template is provided free of charge by WEBJIKE
+ * Official Website: http://webjike.com
+ * GitHub：https://github.com/xiaodai945/webjike
+-->
+<html lang="zh-cn">
+  <head>
+    <stl:include file="@/include/header.html"></stl:include>
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+    <div class="alert alert-danger">您正在使用 <strong>过时的</strong> 浏览器. 是时候 <a href="http://browsehappy.com/">更换一个更好的浏览器</a> 来提升用户体验.</div>
+    <![endif]-->
+    <!--自定义模式-->
+    <div class="customize-mode-tips">
+      <h4>自定义模式</h4>
+      <a href="javascript:;" class="customize">退出</a>
+    </div>
+    <!--头部导航条-->
+    <header>
+      <stl:include file="@/include/nav.html"></stl:include>
+      <div class="not_operational"></div>
+    </header>
+    <div id="content" data-customize="true" data-CustomTheme="true" class="default-bg">
+      <!--导航条-->
+      <div class="mask"></div>
+      <div class="left-bar">
+        <div class="not_operational"></div>
+        <div class="header"><h2>导航目录</h2></div>
+        <nav class="menu" data-ride="menu">
+          <ul id="treeMenu" class="tree tree-menu" data-ride="tree">
+            <stl:channels channelIndex="导航目录">
+              <li>
+                <stl:a><i class="{stl:channel type=icon_class}"></i>{stl:channel type=Title}</stl:a>
+                <ul>
+                  <stl:channels>
+                    <li><stl:a href="@/{stl:channel type=mao_link_id upLevel=1}.html{stl:channel type=mao_link}"><i class="{stl:channel type=icon_class}"></i>{stl:channel type=Title}</stl:a></li>
+                  </stl:channels>
+                </ul>
+              </li>
+            </stl:channels>
+          </ul>
+        </nav>
+        <div class="menu-about">
+          <p>{stl:value type=menu_adout}</p>
+          <!--版权申明，请遵守MIT开源协议，勿删除-->
+          <p>Powered by <a href="http://webjike.com" target="_blank" style="color:#98c1ff">小呆导航</a></p>
+        </div>
+      </div>
+      <!--内容-->
+      <div class="main">
+        <div class="container mainContent">
+          <stl:include file="@/include/sousuo.html"></stl:include>
+          <section class="linkList-item">
+            <div class="container-fluid">
+              <div class="row">
+                <stl:channels channelIndex="首页导航">
+                  <div class="col-md-4 col-sm-6">
+                    <div class="row">
+                      <div class="col-xs-12"><strong class="link-list-tit" id="{stl:channel type=link_list_tit_ID}">{channel.Title}</strong><input class="edit-category"></div>
+                      <stl:contents>
+                      <div class="col-xs-4"><stl:a class="link-list-a text-ellipsis" id="{content.Id}" target="_blank">{content.Title}</stl:a><span class="bianji">编辑</span></div>
+                      </stl:contents>
+                    </div>
+                  </div>
+                </stl:channels>
+              </div>
+            </div>
+          </section>
+        </div>
+        <!-- 对话框HTML -->
+        <div class="modal fade" id="myModal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">关闭</span></button>
+                <h4 class="modal-title">自定义链接</h4>
+              </div>
+              <div class="modal-body">
+                <div class="input-control has-icon-left">
+                  <input id="inputAccountExample1" type="text" class="form-control" placeholder="网址名称">
+                  <label for="inputAccountExample1" class="input-control-icon-left"><i class="icon icon-header"></i></label>
+                </div>
+                <div class="input-control has-icon-left" style="margin-top: 15px">
+                  <input id="inputAccountExample2" type="text" class="form-control" placeholder="请输入网址，注意网址前面要加上http://">
+                  <label for="inputAccountExample1" class="input-control-icon-left"><i class="icon icon-link"></i></label>
+                </div>
+                <div class="modal-text">
+                  <p class="text-red">网址书写格式：http://xxx.com，网址前面一定要加上 “ http:// ” 前缀。</p>
+                  <p>tips：自定义链接的数据是储存在浏览器本地缓存上，清空浏览数据（Cookie及其他网站数据）后会导致自定义的数据丢失，所以清理浏览数据的时候切勿选中（Cookie及其他网站数据）选项。</p>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">保存</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!--内容区域-->
+      <!--主题面板-->
+      <div class="theme-panel">
+        <div class="theme-panel-bg">
+          <div class="theme-panel-header">
+            <div class="theme-panel-type pull-left">选择皮肤</div>
+            <div class="dialog-control pull-right"><i class="fa fa-close" id="cancel-x"></i></div>
+          </div>
+          <div class="theme-panel-content">
+            <ul>
+              <li class="active" data-bgid="default-bg">
+                <img src="{Stl.SiteUrl}/images/default-bg.png">
+                <p>默认主题</p>
+               <i class="fa fa-check-circle-o"></i> 
+              </

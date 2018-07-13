@@ -1,0 +1,40 @@
+
+<div class="main">
+<h1 class="logo">
+  <a href="{Stl.SiteUrl}/index.html">
+    <img src="{Stl.SiteUrl}/images/logo.png">
+    <span>{Stl.SiteName}</span>
+  </a>
+</h1>
+<nav class="nav">
+  <ul>
+    <!--获取导航链接/从首页向下第一个栏目起/只显示nav栏目组-->
+    <stl:channels channelsIndex="首页" topLevel="0" groupChannel="nav">
+      <stl:if testType="UpChannelOrSelf">
+        <stl:yes>
+          <li><stl:a class="aa"></stl:a></li>
+        </stl:yes>
+        <stl:no>
+          <li><stl:a></stl:a></li>
+        </stl:no>
+      </stl:if>
+    </stl:channels>
+  </ul>
+</nav>
+<div class="head-btn visible-lg">
+  <a href="javascript:;" class="sethome" data-toggle="tooltip" data-placement="bottom" title="设为首页" onclick="setHome(this,window.location);"><i class="fa fa-home"></i></a>
+  <a href="javascript:;" class="customize" data-toggle="tooltip" data-placement="bottom" title="自定义模式"><i class="fa fa-cog"></i></a>
+  <a href="javascript:;" class="theme" data-toggle="tooltip" data-placement="bottom" title="更换主题"><i class="fa fa-image"></i></a>
+  <a href="{Stl.SiteUrl}/v1/index.html" target="_blank" data-toggle="tooltip" data-placement="bottom" title="切回旧版"><i class="fa fa-refresh"></i></a>
+  <a href="javascript:;" id="submit_URL" data-toggle="tooltip" data-placement="bottom" title="网址提交"><i class="fa fa-pencil-square-o"></i></a>
+</div>
+<button class="bar-btn visible-xs visible-sm">
+  <span class="icon-bar bar-line1"></span>
+  <span class="icon-bar bar-line2"></span>
+</button>
+<button class="nav-btn visible-xs visible-sm">
+  <span class="icon-line top"></span>
+  <span class="icon-line middle"></span>
+  <span class="icon-line bottom"></span>
+</button>
+</div>

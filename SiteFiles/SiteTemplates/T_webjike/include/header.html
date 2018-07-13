@@ -1,0 +1,22 @@
+<!--头部信息-->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<stl:if testType="TemplateType" testvalue="ContentTemplate">
+  <stl:yes>
+    <title>{content.Title} | {stl.SiteName}</title>
+    <meta name="keywords" content="{stl:Channel type=Keywords topLevel=1}"/>
+    <meta name="description" content="{stl:channel type=Description topLevel=1}"/>
+  </stl:yes>
+  <stl:no>
+    <title>{stl:channel type=Content isClearTags=true}</title>
+    <meta name="keywords" content="{stl:Channel type=Keywords topLevel=2}"/>
+    <meta name="description" content="{stl:channel type=Description topLevel=2}"/>
+  </stl:no>
+</stl:if>
+<!-- zui -->
+<link rel="shortcut icon"  type="image/x-icon" href="{Stl.SiteUrl}/favicon.png">
+<link rel="stylesheet" href="http://cdn.bootcss.com/zui/1.8.1/css/zui.min.css">
+<link href="{Stl.SiteUrl}/css/style.css" rel="stylesheet">
+<link href="{Stl.SiteUrl}/css/media.css" rel="stylesheet">
+<link href="{Stl.SiteUrl}/css/font-awesome.min.css" rel="stylesheet">

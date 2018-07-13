@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!--
+ * Copyright statement *
+ * This site template is provided free of charge by WEBJIKE
+ * Official Website: http://webjike.com
+ * GitHub：https://github.com/xiaodai945/webjike
+-->
+<html lang="zh-cn">
+  <head>
+    <stl:include file="@/include/header.html"></stl:include>
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+    <div class="alert alert-danger">您正在使用 <strong>过时的</strong> 浏览器. 是时候 <a href="http://browsehappy.com/">更换一个更好的浏览器</a> 来提升用户体验.</div>
+    <![endif]-->
+    <!--头部导航条-->
+    <header>
+      <stl:include file="@/include/nav.html"></stl:include>
+    </header>
+    <div id="content">
+      <!--导航条-->
+      <div class="mask"></div>
+      <div class="left-bar">
+        <div class="header"><h2>导航目录</h2></div>
+        <nav class="menu" data-ride="menu">
+          <ul id="treeMenu" class="tree tree-menu" data-ride="tree">
+            <stl:channels channelIndex="导航目录">
+              <li>
+                <stl:a><i class="{stl:channel type=icon_class}"></i>{stl:channel type=Title}</stl:a>
+                <ul>
+                  <!--从首页向下循化3级栏目列表：0为首页-->
+                  <stl:channels>
+                    <!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><stl:a href="@/{stl:channel type=mao_link_id upLevel=1}.html{stl:channel type=mao_link}"><i class="{stl:channel type=icon_class}"></i>{stl:channel type=Title}</stl:a></li>
+                  </stl:channels>
+                </ul>
+              </li>
+            </stl:channels>
+          </ul>
+        </nav>
+        <div class="menu-about">
+          <p>{stl:value type=menu_adout}</p>
+          <!--版权申明，请遵守MIT开源协议，勿删除-->
+          <p>Powered by <a href="http://webjike.com" target="_blank" style="color:#98c1ff">小呆导航</a></p>
+        </div>
+      </div>
+      <!--内容-->
+      <div class="main">
+        <div class="container mainContent">
+          <stl:include file="@/include/sousuo.html"></stl:include>
+          <!--获取每个链接栏目的内容-->
+          <section class="nav-item">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-3 col-xs-12">
+                  <stl:a channelIndex="前端开发"><img src="{Stl.SiteUrl}/images/nav-item_1.jpg"></stl:a>
+                </div>
+                <div class="col-md-3 col-xs-12">
+                  <stl:a channelIndex="界面设计"><img src="{Stl.SiteUrl}/images/nav-item_2.jpg"></stl:a>
+                </div>
+                <div class="col-md-3 col-xs-12">
+                  <stl:a channelIndex="影视后期"><img src="{Stl.SiteUrl}/images/nav-item_3.jpg"></stl:a>
+                </div>
+                <div class="col-md-3 col-xs-12">
+                  <stl:a channelIndex="日常办公"><img src="{Stl.SiteUrl}/images/nav-item_4.jpg"></stl:a>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="get-home">
+            <div class="get-homeBox"><a href="http://webjike.com"><i class="fa fa-arrow-circle-left"></i>返回首页</a></div>
+          </section>
+        </div>
+        <!--页脚-->
+        <stl:include file="@/include/footer.html"></stl:include>
+      </div><!--内容区域-->
+    </div>
+    <div id="get-top" title="回到顶部"><i class="icon icon-arrow-up"></i></div>
+    <!--[if lt IE 9]>
+    <script src="dist/lib/ieonly/html5shiv.js"></script>
+    <script src="dist/lib/ieonly/respond.js"></script>
+    <![endif]-->
+    <!-- jQuery (ZUI中的Javascript组件依赖于jQuery) -->
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <!-- ZUI Javascript组件 -->
+    <script src="{Stl.SiteUrl}/dist/js/zui.js"></script>
+    <script src="{Stl.SiteUrl}/layer/layer.js"></script>
+    <script src="{Stl.SiteUrl}/js/js.js"></script>
+  </body>
+</html>
+
+

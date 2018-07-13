@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<!--
+ * Copyright statement *
+ * This site template is provided free of charge by WEBJIKE
+ * Official Website: http://webjike.com
+ * GitHub：https://github.com/xiaodai945/webjike
+-->
+<html lang="zh-cn">
+  <head>
+    <stl:include file="@/include/header.html"></stl:include>
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+    <div class="alert alert-danger">您正在使用 <strong>过时的</strong> 浏览器. 是时候 <a href="http://browsehappy.com/">更换一个更好的浏览器</a> 来提升用户体验.</div>
+    <![endif]-->
+    <!--头部导航条-->
+    <header>
+      <stl:include file="@/include/nav.html"></stl:include>
+    </header>
+    <div id="content">
+      <!--导航条-->
+      <div class="mask"></div>
+      <div class="left-bar">
+        <div class="header"><h2>导航目录</h2></div>
+        <nav class="menu" data-ride="menu">
+          <ul id="treeMenu" class="tree tree-menu" data-ride="tree">
+            <stl:channels channelIndex="导航目录">
+              <li>
+                <stl:a><i class="{stl:channel type=icon_class}"></i>{stl:channel type=Title}</stl:a>
+                <ul>
+                  <!--从首页向下循化3级栏目列表：0为首页-->
+                  <stl:channels>
+                    <!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><stl:a href="@/{stl:channel type=mao_link_id upLevel=1}.html{stl:channel type=mao_link}"><i class="{stl:channel type=icon_class}"></i>{stl:channel type=Title}</stl:a></li>
+                  </stl:channels>
+                </ul>
+              </li>
+            </stl:channels>
+           </ul>
+        </nav>
+        <div class="menu-about">
+          <p>{stl:value type=menu_adout}</p>
+          <!--版权申明，请遵守MIT开源协议，勿删除-->
+          <p>Powered by <a href="http://webjike.com" target="_blank" style="color:#98c1ff">小呆导航</a></p>
+        </div>
+      </div>
+      <!--内容-->
+      <div class="main">
+        <div class="container mainContent">
+          <!--内容banner-->
+          <div class="banner">
+            <h2>教程资源</h2>
+            <p>入门到精通+各种实用案例，且全部是视频教程.</p>
+            <p>网上采集了超过1TB的视频教程资源，内容覆盖：前端开发、PHP、IOS、JAVA、C语言等资源.</p>
+          </div>
+          <div class="row list-box">
+            <div class="menu-list clearfix">
+              <div class="meun-list-tit hidden-xs"><i class="icon icon-th-list"></i>目录：</div>
+              <ul class="nav nav-tabs">
+                <!--判断当前页面是否为“教程资源”，若是则给“全部”分类标上“active”类名-->
+                <stl:if testType="ChannelName" testValue="教程资源">
+                  <stl:yes>
+                    <li class="active"><stl:a channelIndex="教程资源">全部</stl:a></li>
+                  </stl:yes>
+                  <stl:no>
+                    <li><stl:a channelIndex="教程资源">全部</stl:a></li>
+                  </stl:no>
+                 </stl:if>
+                <!--获取站点下所有的子目录-->
+                <stl:channels channelIndex="教程资源">
+                  <!--判断当前当前栏目或上级栏目是否和本页面的栏目组名称一致，若是则给对应的栏目值标上“active”类名-->
+                  <stl:if testType="UpChannelOrSelf">
+                    <stl:yes>
+                      <li class="active"><stl:a href="javascript:;">{channel.Title}</stl:a></li>
+                    </stl:yes>
+                    <stl:no>
+                      <li><stl:a>{channel.Title}</stl:a></li>
+                    </stl:no>
+                  </stl:if>
+                </stl:channels>
+              </ul>
+            </div>
+            <stl:pageContents channelIndex="{channel.Title}" order="AddDate" pageNum="24" scope="All">
+              <div class="col-md-4 col-sm-6">
+                <stl:a class="card">
+                  <img data-original="{content.ImageUrl}" alt="{content.Title}">
+                  <div class="card-heading"><strong><i class="icon icon-folder-open"></i>{content.Title}</strong></div>
+                  <span class="label label-danger">{stl:content type=toll_label}</span>
+                  <span class="label label-success">{stl:content type=free_label}</span>
+                </stl:a>
+              </div>
+            </stl:pageContents>
+            <stl:pageItems autoHide="true">
+              <ul class="pager pager-loose">
+                <stl:pageItem type="PreviousPage">
+                  <stl:yes>
+                    <li class="previous"><a href="{Current.Url}">« 上一页</a></li>
+                  </stl:yes>
+                  <stl:no>
+                    <li class="previous disabled"><a href="your/nice/url">« 上一页</a></li>
+                  </stl:no>
+                </stl:pageItem>
+                <stl:pageItem type="PageNavigation" listNum="5">
+                   <stl:yes>
+                    <li class=""><a href="{Current.Url}">{Current.Num}</a></li>
+                  </stl:yes>
+                  <stl:no>
+                    <li class="active"><a href="javascript:;">{Current.Num}</a></li>
+                  </stl:no>
+                </stl:pageItem>
+                <stl:pageItem type="NextPage">
+                  <stl:yes>
+                    <li class="next"><a href="{Current.Url}">» 下一页</a></li>
+                  </stl:yes>
+                  <stl:no>
+                    <li class="next disabled"><a href="your/nice/url">» 下一页</a></li>
+                  </stl:no>
+                </stl:pageItem>
+              </ul>
+            </stl:pageItems>
+          </div>
+        </div>
+        <!--页脚-->
+        <stl:include file="@/include/footer.html"></stl:include>
+      </div><!--内容区域-->
+    </div>
+    <div id="get-top" title="回到顶部"><i class="icon icon-arrow-up"></i></div>
+    <!--[if lt IE 9]>
+    <script src="dist/lib/ieonly/html5shiv.js"></script>
+    <script src="dist/lib/ieonly/respond.js"></script>
+    <![endif]-->
+    <!-- jQuery (ZUI中的Javascript组件依赖于jQuery) -->
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <!-- ZUI Javascript组件 -->
+    <script src="{Stl.SiteUrl}/dist/js/zui.js"></script>
+    <script src="{Stl.SiteUrl}/js/jquery.lazyload.min.js"></script>
+    <script src="{Stl.SiteUrl}/js/js.js"></script>
+    <script>
+      $(function() {
+         $("#content img").lazyload({effect: "fadeIn"});
+      });
+    </script>
+  </body>
+</html>
+
+

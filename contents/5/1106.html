@@ -1,0 +1,253 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <!--头部信息-->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>阿里云虚拟主机HTTPS配置方法，带你避坑 | 小呆导航</title>
+    <meta name="keywords" content="小呆博客,WEBJIKE博客,小呆导航博客,程序员博客" />
+    <meta name="description" content="WEBJIKE博客是小呆导航站长的个人博客，致力于为广大用户提供最前沿的前端开发技术、平面设计、作品分享、网站推荐、资源共享，开发交流等资讯。" />
+<!-- zui -->
+<link rel="shortcut icon"  type="image/x-icon" href="/favicon.png">
+<link rel="stylesheet" href="https://cdn.bootcss.com/zui/1.8.1/css/zui.min.css">
+<link href="/css/style.css" rel="stylesheet">
+<link href="/css/media.css" rel="stylesheet">
+<link href="/css/font-awesome.min.css" rel="stylesheet">
+
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+    <div class="alert alert-danger">您正在使用 <strong>过时的</strong> 浏览器. 是时候 <a href="http://browsehappy.com/">更换一个更好的浏览器</a> 来提升用户体验.</div>
+    <![endif]-->
+    <!--头部导航条-->
+    <header>
+      
+<div class="main">
+<h1 class="logo">
+  <a href="/index.html">
+    <img src="/images/logo.png">
+    <span>小呆导航</span>
+  </a>
+</h1>
+<nav class="nav">
+  <ul>
+    <!--获取导航链接/从首页向下第一个栏目起/只显示nav栏目组-->
+    <li><a href="/channels/2.html">教程资源</a></li><li><a href="/channels/3.html">高清图库</a></li><li><a href="/channels/4.html">软件下载</a></li><li><a href="/channels/5.html" class="aa">个人博客</a></li><li><a href="/channels/6.html">在线留言</a></li><li><a href="/channels/149.html">友情链接</a></li><li><a href="/channels/332.html">关于本站</a></li>
+  </ul>
+</nav>
+<div class="head-btn visible-lg">
+  <a href="javascript:;" class="sethome" data-toggle="tooltip" data-placement="bottom" title="设为首页" onclick="setHome(this,window.location);"><i class="fa fa-home"></i></a>
+  <a href="javascript:;" class="customize" data-toggle="tooltip" data-placement="bottom" title="自定义模式"><i class="fa fa-cog"></i></a>
+  <a href="javascript:;" class="theme" data-toggle="tooltip" data-placement="bottom" title="更换主题"><i class="fa fa-image"></i></a>
+  <a href="/v1/index.html" target="_blank" data-toggle="tooltip" data-placement="bottom" title="切回旧版"><i class="fa fa-refresh"></i></a>
+  <a href="javascript:;" id="submit_URL" data-toggle="tooltip" data-placement="bottom" title="网址提交"><i class="fa fa-pencil-square-o"></i></a>
+</div>
+<button class="bar-btn visible-xs visible-sm">
+  <span class="icon-bar bar-line1"></span>
+  <span class="icon-bar bar-line2"></span>
+</button>
+<button class="nav-btn visible-xs visible-sm">
+  <span class="icon-line top"></span>
+  <span class="icon-line middle"></span>
+  <span class="icon-line bottom"></span>
+</button>
+</div>
+
+    </header>
+    <div id="content">
+      <!--导航条-->
+      <div class="mask"></div>
+      <div class="left-bar">
+        <div class="header"><h2>导航目录</h2></div>
+        <nav class="menu" data-ride="menu">
+          <ul id="treeMenu" class="tree tree-menu" data-ride="tree">
+            <li>
+                <a href="/web.html"><i class="fa fa-html5"></i>前端开发</a>
+                <ul>
+                  <!--从首页向下循化3级栏目列表：0为首页-->
+                  <!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-1"><i class="fa fa-video-camera"></i>视频教程</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-2"><i class="fa fa-book"></i>在线学习</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-3"><i class="fa fa-puzzle-piece"></i>碎片学习</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-4"><i class="fa fa-wrench"></i>学习工具</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-5"><i class="fa fa-server"></i>WEB公共库</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-6"><i class="fa fa-users"></i>前端组织/团队</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-7"><i class="fa fa-commenting"></i>社区/论坛</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-8"><i class="fa fa-magnet"></i>前端框架 - UI</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-9"><i class="fa fa-file-code-o"></i>前端框架 - JS</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-10"><i class="fa fa-paper-plane"></i>前端插件</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-11"><i class="fa fa-tablet"></i>移动框架</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-12"><i class="fa fa-hourglass-2"></i>预处理器</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-13"><i class="fa fa-font"></i>字体图标</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-14"><i class="fa fa-cogs"></i>构建工具</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-15"><i class="fa fa-cubes"></i>模块加载</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-16"><i class="fa fa-briefcase"></i>包管理器</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-17"><i class="fa fa-dashboard"></i>模板引擎</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-18"><i class="fa fa-gamepad"></i>游戏引擎</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-19"><i class="fa fa-sun-o"></i>代码高亮</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-20"><i class="fa fa-github"></i>代码托管</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-21"><i class="fa fa-wordpress"></i>博客系统</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-22"><i class="fa fa-jsfiddle"></i>域名/服务器</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-23"><i class="fa fa-paperclip"></i>辅助工具</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-24"><i class="fa fa-flag"></i>站长工具</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-25"><i class="fa fa-photo"></i>图片素材</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-26"><i class="fa fa-thumbs-o-up"></i>精选酷站</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-27"><i class="fa fa-globe"></i>互联网资讯</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-28"><i class="fa fa-suitcase"></i>工作/私单</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-29"><i class="fa fa-cloud-download"></i>应用程序</a></li>
+                </ul>
+              </li><li>
+                <a href="/ui.html"><i class="fa fa-dribbble"></i>界面设计</a>
+                <ul>
+                  <!--从首页向下循化3级栏目列表：0为首页-->
+                  <!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/ui.html#row-1"><i class="fa fa-graduation-cap"></i>学习教程</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/ui.html#row-2"><i class="fa fa-lightbulb-o"></i>灵感采集</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/ui.html#row-3"><i class="fa fa-tv"></i>界面交互</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/ui.html#row-4"><i class="fa fa-briefcase"></i>在线工具</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/ui.html#row-5"><i class="fa fa-flag"></i>icon图标</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/ui.html#row-6"><i class="fa fa-magic"></i>设计素材</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/ui.html#row-7"><i class="fa fa-photo"></i>图库素材</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/ui.html#row-8"><i class="fa fa-tint"></i>颜色搭配</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/ui.html#row-8"><i class="fa fa-font"></i>字体字形</a></li>
+                </ul>
+              </li><li>
+                <a href="/cg.html"><i class="fa fa-youtube-play"></i>影视后期</a>
+                <ul>
+                  <!--从首页向下循化3级栏目列表：0为首页-->
+                  <!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/cg.html#row-1"><i class="fa fa-graduation-cap"></i>学习教程</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/cg.html#row-2"><i class="fa fa-magic"></i>特效动画</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/cg.html#row-3"><i class="fa fa-comments"></i>资讯交流</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/cg.html#row-4"><i class="fa fa-cloud-download"></i>软件插件</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/cg.html#row-5"><i class="fa fa-camera-retro"></i>摄影摄像</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/cg.html#row-6"><i class="fa fa-folder-open"></i>素材资源</a></li>
+                </ul>
+              </li><li>
+                <a href="/offlce.html"><i class="fa fa-keyboard-o"></i>日常办公</a>
+                <ul>
+                  <!--从首页向下循化3级栏目列表：0为首页-->
+                  <!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/offlce.html#row-1"><i class="fa fa-fire"></i>热门推荐</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/offlce.html#row-2"><i class="fa fa-dashboard"></i>效率资源</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/offlce.html#row-3"><i class="fa fa-graduation-cap"></i>技能提升</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/offlce.html#row-4"><i class="fa fa-wrench"></i>在线工具</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/offlce.html#row-5"><i class="fa fa-users"></i>团队协作</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/offlce.html#row-6"><i class="fa fa-envelope"></i>电子邮箱</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/offlce.html#row-7"><i class="fa fa-book"></i>文案策划</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/offlce.html#row-7"><i class="fa fa-file-word-o"></i>文档模板</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/offlce.html#row-8"><i class="fa fa-desktop"></i>工作兼职</a></li>
+                </ul>
+              </li>
+           </ul>
+        </nav>
+        <div class="menu-about">
+          <p>工作 / 学习 / 生活 / 网址导航</p>
+          <p>@小呆导航 V2.0</p>
+        </div>
+      </div>
+      <!--内容-->
+      <div class="main">
+        <div class="container mainContent">
+          <div class="row article-box">
+            <div class="col-md-8">
+              <article class="article">
+                <!-- 文章头部 -->
+                <h2 class="text-center">阿里云虚拟主机HTTPS配置方法，带你避坑</h2>
+                <!-- 文章属性列表 -->
+                <div class="info text-center">
+                  <span class="author"><i class="icon icon-user"></i>作者：webjike</span>
+                  <span> · 2018-05-09</span>
+                  <span class="info-tags">
+                    
+                      <a href="/utils/tags.html?tagName=HTTPS" class="label label-warning">HTTPS</a>
+                    
+                      <a href="/utils/tags.html?tagName=虚拟主机" class="label label-warning">虚拟主机</a>
+                    
+                      <a href="/utils/tags.html?tagName=建站技巧" class="label label-warning">建站技巧</a>
+                    
+                  </span>
+                  
+                </div>
+                <!-- 文章正文部分 -->
+                <section class="article-con">
+                  <p>应网友的要求，安装SSL证书启用了HTTPS协议，由于我本身是个新手又是第一次弄这个东西，折腾了两天才搞定这个HTTPS证书，期间躺过不少坑，所以整理了一下遇到的这些坑，希望对大家有帮助。</p><p><strong>Tips：虚拟主机启用https需要开启CDN加速，而CDN是要收费的！</strong><br/></p><p><strong>一、CDN控制台配置https方法</strong><br/></p><p>在启用https前是需要先购买SSL并安装才能进行操作的，阿里云（其他平台也有）提供了多种证书服务，我们使用免费的即可，购买方式如下：<img src="/upload/images/2018/5/a771506b60f3419c.png" title="23.png" alt="23.png"/></p><p>阿里云控制台》安全（云盾）》购买证书：<br/><img src="/upload/images/2018/5/134276eb8ef9bf8e.png" title="24.png" alt="24.png"/></p><p>支付完成后回到“CA证书服务”面板，点击证书后面的“进度”列的“修改”补齐证书资料，资料提交后会系统会自动审核，预计1分钟左右即可看到审核结果。<img src="/upload/images/2018/5/1f8a2a79f9449e36.png" title="25.png" alt="25.png"/></p><p>然后打开CDN面板，在域名管理中添加要加速的域名，并在域名中添加CDN加速CNAME解析。<img src="https://workorder.console.aliyun.com/attach/note_attach.do?spm=5176.2020520129.105.6.634a46aeyXhnac&id=43921790&order=0"/></p><p>打开HTTPS配置，开启证书》选择购买的证书》强制跳转改为“HTTP -&gt; HTTPS”：<br/><img src="/upload/images/2018/5/2a6e98f5c1fe52aa.png" title="1.png" alt="1.png"/></p><p>至此，所有配置完毕，打开域名测试是否转为了https，若是https那么恭喜完成配置，若不是请接着往下看。</p><p><strong>遇坑经历</strong></p><p>上面的步骤是和网上大多数教程是一样的，我也是照着一步步设置，但是我配置完成之后出问题了：<br/><img src="/upload/images/2018/5/d234dc43771bf050.jpg" title="2.jpg" alt="2.jpg"/></p><p>是的，访问域名直接转到一个504页面，反复检查了配置参数，没有发现问题。于是在控制台发工单询问技术员，对方回复：虚拟主机使用CDN加速，访问https://www.webjike.com出现504，说明是CDN节点回源超时，请您反馈CDN回源设置截图和全站加速设置截图，注意，CDN和虚拟主机之间仅支持http协议，请您确认是否设置了动态协议回源为http。</p><p>上面提到“确认是否设置了动态协议回源为http”，但是在CDN面板中配置https却没有看到这个选项：<br/><img src="/upload/images/2018/5/a64e4ed44d25e80e.png" title="3.png" alt="3.png"/></p><p>找了半天硬是没有找到在哪里修改动态协议回源，将会回源配置截图发给对方后，它发了一个链接过来让我参考里面的方法设置：<a href="https://help.aliyun.com/document_detail/65089.html?spm=5176.11220512.0.0.79cd72f0NC0cFd" target="_blank"><span style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue&quot;, &quot;Luxi Sans&quot;, &quot;DejaVu Sans&quot;, Tahoma, &quot;Hiragino Sans GB&quot;, STHeiti, &quot;Microsoft YaHei&quot;; font-size: 12px; font-weight: bold; white-space: pre-wrap; background-color: rgb(255, 255, 255);">https://help.aliyun.com/document_detail/65089.html?spm=5176.11220512.0.0.79cd72f0NC0cFd</span></a></p><p>但是找了半天还是找不到文章里面的设置项在哪。。。<br/><img src="/upload/images/2018/5/5255b9e66403d760.png" title="4.png" alt="4.png"/></p><p>然后，在CDN管理控制台域名管理里面看到这样一行字：<br/><img src="/upload/images/2018/5/540adad3f5d3ae5c.png" title="image.png" alt="image.png"/></p><p>尼玛啊，原来控制台改版了！难怪一直找不到在哪里设置动态协议回源！！！</p><p>然后进入“全站加速控制台”，跟前面一样添加域名配置https，但是发现域名已经存在！为什么呢？因为在CDN管理控制台已经添加过该域名，所以需要删掉该加速域名的CDN配置才能在全站加速控制台中添加。</p><p><strong>二、全站加速控制台配置https方法</strong></p><p>证书购买和安装同上面步骤一样，证书类型选“云盾证书”，然后选中购买的证书即可，不需要手动下载证书，然后拷贝证书内容再粘贴进去：<br/><img src="/upload/images/2018/5/f8950718cecaae43.png" title="image.png" alt="image.png"/></p><p>将回源配置中的“静态协议跟随回源”改为“HTTP”，动态协议跟随回源同样也需要改为“HTTP”：<br/><img src="/upload/images/2018/5/68b459b790832248.png" title="26.png" alt="26.png"/></p><p><img src="/upload/images/2018/5/6df8f271fab2fbbd.png" title="image.png" alt="image.png"/></p><p>至此配置完毕，打开域名应该能正常跳转到HTTPS。<br/><img src="/upload/images/2018/5/9246dc1e1fcc4ca6.png"/></p><p><br/></p><p><strong>HTTPS使用体验</strong></p><p>开启了HTTPS之后网站速度确实提升了很多，应该也得益于CDN加速的原因，而且域名地址栏上有一个绿色的小锁和安全标志，即增加了美感又给陌生用户一种安全感。</p><p>但是！凡事都怕但是，文章前面提到了使用CDN实现HTTP强制跳转HTTPS是要收费的，而虚拟主机是不可以单独给域名安装SSL证书的，需要开启CDN服务。CDN收费方式只支持带宽峰值和流量计费两种方式，笔者天真的以为能支持https请求计费方式（网站流量不高，划算），于是花50块买了1000万个https请求包，买完之后发现这完全就是两种不同的收费产品！你启用CDN加速服务就得购买流量，不然你的https请求包也使用不了。。。</p><p>网站刚启用HTTPS后，阿里云半夜3点多给我发短信，提醒我流量用超了（我没买流量），需要补交费用才能继续使用，否则将在24小时内停用该服务。考虑到现在网站流量也不是很高，而且网站速度还算挺快的，所以也就没有多大必要开启HTTPS，今天准备停掉HTTPS，后期网站搬迁至云服务器后才安装证书了。</p><p>如果你的网站使用的是虚拟主机，就要考虑有没有必要开启HTTPS了。</p>
+                </section>
+                <!-- 文章底部 -->
+                <footer>
+                  <p><span>上一篇: </span><a href="/contents/5/1107.html">畅言评论区中出现的广告是系统自带，非本站接的广告</a> </p>
+                  <p><span>下一篇: </span><a href="/contents/5/1097.html">一个好的网站值得被更多人知道，小呆导航建站以来最好的成绩！</a> </p>
+                </footer>
+              </article>
+              <div class="comment-box">
+                <div id="SOHUCS" sid="1106"></div>
+                <script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js" ></script>
+                <script type="text/javascript"> window.changyan.api.config({ appid: 'cysMRaVDi', conf: 'prod_497bf64d75ce00fed95cba1232778dc2' }); </script>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="row">
+                <div class="col-md-12 col-sm-6">
+                  <div class="widget hot-news">
+                    <h3>热门推荐</h3>
+                    <ul>
+                      <li><a href="/contents/5/1103.html" class="text-ellipsis" title="小呆导航使用小技巧，萌新必看">小呆导航使用小技巧，萌新必看</a></li><li><a href="/contents/5/1106.html" class="text-ellipsis" title="阿里云虚拟主机HTTPS配置方法，带你避坑">阿里云虚拟主机HTTPS配置方法，带你避坑</a></li><li><a href="/contents/5/1102.html" class="text-ellipsis" title="V2EX账号被封，对自己个人行为反思">V2EX账号被封，对自己个人行为反思</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-md-12 col-sm-6">
+                  <div class="widget tags">
+                    <h3>热门标签</h3>
+                    <div class="tags-list">
+                      
+                        <a href="/utils/tags.html?tagName=开发日记">开发日记</a>
+                      
+                        <a href="/utils/tags.html?tagName=网站公告">网站公告</a>
+                      
+                        <a href="/utils/tags.html?tagName=生活琐事">生活琐事</a>
+                      
+                        <a href="/utils/tags.html?tagName=分享">分享</a>
+                      
+                        <a href="/utils/tags.html?tagName=HTTPS">HTTPS</a>
+                      
+                        <a href="/utils/tags.html?tagName=虚拟主机">虚拟主机</a>
+                      
+                        <a href="/utils/tags.html?tagName=建站技巧">建站技巧</a>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--页脚-->
+        <footer class="footer">
+  <div class="container">
+    <div class="rwo">
+      <div class="col-md-12">
+        <p>本站内容采自互联网，如果某些内容侵犯了你的权益，请立即联系我，我将尽快删除相关内容，联系邮箱：1371096680@qq.com</p>
+        <p>Copyright © 2017-2018 小呆导航（webjike.com）All Rights Reserved</p>
+      </div>
+    </div>
+  </div>
+</footer>
+      </div><!--内容区域-->
+    </div>
+    <div id="get-top" title="回到顶部"><i class="icon icon-arrow-up"></i></div>
+    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1261855216'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1261855216' type='text/javascript'%3E%3C/script%3E"));</script>
+    <!--[if lt IE 9]>
+    <script src="dist/lib/ieonly/html5shiv.js"></script>
+    <script src="dist/lib/ieonly/respond.js"></script>
+    <![endif]-->
+    <!-- jQuery (ZUI中的Javascript组件依赖于jQuery) -->
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <!-- ZUI Javascript组件 -->
+    <script src="/dist/js/zui.js"></script>
+    <script src="/js/js.js"></script>
+  </body>
+</html>
+
+

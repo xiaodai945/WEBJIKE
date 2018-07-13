@@ -1,0 +1,409 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <!--头部信息-->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>实战案例 |&nbsp;免费教程资源下载</title>
+    <meta name="keywords" content="js实战案例,js教程,网页教程,实战案例教程,web开发,前端开发实战,html案例" />
+    <meta name="description" content="小呆导航不仅提供了便捷的上网导航，还提供了海量免费教程资源下载，程序员视频教程，平面设计视频教程，前端开发视频教程等资源下载，且全部都是免费的。" />
+<!-- zui -->
+<link rel="shortcut icon"  type="image/x-icon" href="/favicon.png">
+<link rel="stylesheet" href="https://cdn.bootcss.com/zui/1.8.1/css/zui.min.css">
+<link href="/css/style.css" rel="stylesheet">
+<link href="/css/media.css" rel="stylesheet">
+<link href="/css/font-awesome.min.css" rel="stylesheet">
+
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+    <div class="alert alert-danger">您正在使用 <strong>过时的</strong> 浏览器. 是时候 <a href="http://browsehappy.com/">更换一个更好的浏览器</a> 来提升用户体验.</div>
+    <![endif]-->
+    <!--头部导航条-->
+    <header>
+      
+<div class="main">
+<h1 class="logo">
+  <a href="/index.html">
+    <img src="/images/logo.png">
+    <span>小呆导航</span>
+  </a>
+</h1>
+<nav class="nav">
+  <ul>
+    <!--获取导航链接/从首页向下第一个栏目起/只显示nav栏目组-->
+    <li><a href="/channels/2.html" class="aa">教程资源</a></li><li><a href="/channels/3.html">高清图库</a></li><li><a href="/channels/4.html">软件下载</a></li><li><a href="/channels/5.html">个人博客</a></li><li><a href="/channels/6.html">在线留言</a></li><li><a href="/channels/149.html">友情链接</a></li><li><a href="/channels/332.html">关于本站</a></li>
+  </ul>
+</nav>
+<div class="head-btn visible-lg">
+  <a href="javascript:;" class="sethome" data-toggle="tooltip" data-placement="bottom" title="设为首页" onclick="setHome(this,window.location);"><i class="fa fa-home"></i></a>
+  <a href="javascript:;" class="customize" data-toggle="tooltip" data-placement="bottom" title="自定义模式"><i class="fa fa-cog"></i></a>
+  <a href="javascript:;" class="theme" data-toggle="tooltip" data-placement="bottom" title="更换主题"><i class="fa fa-image"></i></a>
+  <a href="/v1/index.html" target="_blank" data-toggle="tooltip" data-placement="bottom" title="切回旧版"><i class="fa fa-refresh"></i></a>
+  <a href="javascript:;" id="submit_URL" data-toggle="tooltip" data-placement="bottom" title="网址提交"><i class="fa fa-pencil-square-o"></i></a>
+</div>
+<button class="bar-btn visible-xs visible-sm">
+  <span class="icon-bar bar-line1"></span>
+  <span class="icon-bar bar-line2"></span>
+</button>
+<button class="nav-btn visible-xs visible-sm">
+  <span class="icon-line top"></span>
+  <span class="icon-line middle"></span>
+  <span class="icon-line bottom"></span>
+</button>
+</div>
+
+    </header>
+    <div id="content">
+      <!--导航条-->
+      <div class="mask"></div>
+      <div class="left-bar">
+        <div class="header"><h2>导航目录</h2></div>
+        <nav class="menu" data-ride="menu">
+          <ul id="treeMenu" class="tree tree-menu" data-ride="tree">
+            <li>
+                <a href="/web.html"><i class="fa fa-html5"></i>前端开发</a>
+                <ul>
+                  <!--从首页向下循化3级栏目列表：0为首页-->
+                  <!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-1"><i class="fa fa-video-camera"></i>视频教程</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-2"><i class="fa fa-book"></i>在线学习</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-3"><i class="fa fa-puzzle-piece"></i>碎片学习</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-4"><i class="fa fa-wrench"></i>学习工具</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-5"><i class="fa fa-server"></i>WEB公共库</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-6"><i class="fa fa-users"></i>前端组织/团队</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-7"><i class="fa fa-commenting"></i>社区/论坛</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-8"><i class="fa fa-magnet"></i>前端框架 - UI</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-9"><i class="fa fa-file-code-o"></i>前端框架 - JS</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-10"><i class="fa fa-paper-plane"></i>前端插件</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-11"><i class="fa fa-tablet"></i>移动框架</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-12"><i class="fa fa-hourglass-2"></i>预处理器</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-13"><i class="fa fa-font"></i>字体图标</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-14"><i class="fa fa-cogs"></i>构建工具</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-15"><i class="fa fa-cubes"></i>模块加载</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-16"><i class="fa fa-briefcase"></i>包管理器</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-17"><i class="fa fa-dashboard"></i>模板引擎</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-18"><i class="fa fa-gamepad"></i>游戏引擎</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-19"><i class="fa fa-sun-o"></i>代码高亮</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-20"><i class="fa fa-github"></i>代码托管</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-21"><i class="fa fa-wordpress"></i>博客系统</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-22"><i class="fa fa-jsfiddle"></i>域名/服务器</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-23"><i class="fa fa-paperclip"></i>辅助工具</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-24"><i class="fa fa-flag"></i>站长工具</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-25"><i class="fa fa-photo"></i>图片素材</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-26"><i class="fa fa-thumbs-o-up"></i>精选酷站</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-27"><i class="fa fa-globe"></i>互联网资讯</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-28"><i class="fa fa-suitcase"></i>工作/私单</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-29"><i class="fa fa-cloud-download"></i>应用程序</a></li>
+                </ul>
+              </li><li>
+                <a href="/ui.html"><i class="fa fa-dribbble"></i>界面设计</a>
+                <ul>
+                  <!--从首页向下循化3级栏目列表：0为首页-->
+                  <!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/ui.html#row-1"><i class="fa fa-graduation-cap"></i>学习教程</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/ui.html#row-2"><i class="fa fa-lightbulb-o"></i>灵感采集</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/ui.html#row-3"><i class="fa fa-tv"></i>界面交互</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/ui.html#row-4"><i class="fa fa-briefcase"></i>在线工具</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/ui.html#row-5"><i class="fa fa-flag"></i>icon图标</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/ui.html#row-6"><i class="fa fa-magic"></i>设计素材</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/ui.html#row-7"><i class="fa fa-photo"></i>图库素材</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/ui.html#row-8"><i class="fa fa-tint"></i>颜色搭配</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/ui.html#row-8"><i class="fa fa-font"></i>字体字形</a></li>
+                </ul>
+              </li><li>
+                <a href="/cg.html"><i class="fa fa-youtube-play"></i>影视后期</a>
+                <ul>
+                  <!--从首页向下循化3级栏目列表：0为首页-->
+                  <!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/cg.html#row-1"><i class="fa fa-graduation-cap"></i>学习教程</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/cg.html#row-2"><i class="fa fa-magic"></i>特效动画</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/cg.html#row-3"><i class="fa fa-comments"></i>资讯交流</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/cg.html#row-4"><i class="fa fa-cloud-download"></i>软件插件</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/cg.html#row-5"><i class="fa fa-camera-retro"></i>摄影摄像</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/cg.html#row-6"><i class="fa fa-folder-open"></i>素材资源</a></li>
+                </ul>
+              </li><li>
+                <a href="/offlce.html"><i class="fa fa-keyboard-o"></i>日常办公</a>
+                <ul>
+                  <!--从首页向下循化3级栏目列表：0为首页-->
+                  <!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/offlce.html#row-1"><i class="fa fa-fire"></i>热门推荐</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/offlce.html#row-2"><i class="fa fa-dashboard"></i>效率资源</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/offlce.html#row-3"><i class="fa fa-graduation-cap"></i>技能提升</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/offlce.html#row-4"><i class="fa fa-wrench"></i>在线工具</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/offlce.html#row-5"><i class="fa fa-users"></i>团队协作</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/offlce.html#row-6"><i class="fa fa-envelope"></i>电子邮箱</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/offlce.html#row-7"><i class="fa fa-book"></i>文案策划</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/offlce.html#row-7"><i class="fa fa-file-word-o"></i>文档模板</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/offlce.html#row-8"><i class="fa fa-desktop"></i>工作兼职</a></li>
+                </ul>
+              </li>
+           </ul>
+        </nav>
+        <div class="menu-about">
+          <p>工作 / 学习 / 生活 / 网址导航</p>
+          <p>@小呆导航 V2.0</p>
+        </div>
+      </div>
+      <!--内容-->
+      <div class="main">
+        <div class="container mainContent">
+          <!--内容banner-->
+          <div class="banner">
+            <h2>教程资源</h2>
+            <p>入门到精通+各种实用案例，且全部是视频教程.</p>
+            <p>网上采集了超过1TB的视频教程资源，内容覆盖：前端开发、PHP、IOS、JAVA、C语言等资源.</p>
+          </div>
+          <div class="row list-box">
+            <div class="menu-list clearfix">
+              <div class="meun-list-tit hidden-xs"><i class="icon icon-th-list"></i>目录：</div>
+              <ul class="nav nav-tabs">
+                <!--判断当前页面是否为“教程资源”，若是则给“全部”分类标上“active”类名-->
+                <li><a href="/channels/2.html">全部</a></li>
+                <!--获取站点下所有的子目录-->
+                <!--判断当前当前栏目或上级栏目是否和本页面的栏目组名称一致，若是则给对应的栏目值标上“active”类名-->
+                  <li><a href="/channels/29.html">HTML+CSS</a></li><!--判断当前当前栏目或上级栏目是否和本页面的栏目组名称一致，若是则给对应的栏目值标上“active”类名-->
+                  <li><a href="/channels/30.html">JavaScript</a></li><!--判断当前当前栏目或上级栏目是否和本页面的栏目组名称一致，若是则给对应的栏目值标上“active”类名-->
+                  <li><a href="/channels/152.html">全套教程</a></li><!--判断当前当前栏目或上级栏目是否和本页面的栏目组名称一致，若是则给对应的栏目值标上“active”类名-->
+                  <li class="active"><a href="javascript:;">实战案例</a></li>
+              </ul>
+            </div>
+            
+              <div class="col-md-4 col-sm-6">
+                <a href="/contents/49/2070.html" class="card"><img data-original="/upload/images/2018/6/e482c2a61e652393.jpg" alt="jquery商品分类选购页面">
+                  <div class="card-heading"><strong><i class="icon icon-folder-open"></i>jquery商品分类选购页面</strong></div>
+                  <span class="label label-danger"></span>
+                  <span class="label label-success">免费</span>
+                </img></a>
+              </div>
+            
+              <div class="col-md-4 col-sm-6">
+                <a href="/contents/49/2069.html" class="card"><img data-original="/upload/images/2018/6/17e8ca592f8a530b.jpg" alt="产品介绍页的开发 | web开发实战案例">
+                  <div class="card-heading"><strong><i class="icon icon-folder-open"></i>产品介绍页的开发 | web开发实战案例</strong></div>
+                  <span class="label label-danger"></span>
+                  <span class="label label-success">免费</span>
+                </img></a>
+              </div>
+            
+              <div class="col-md-4 col-sm-6">
+                <a href="/contents/49/2068.html" class="card"><img data-original="/upload/images/2018/6/6615bd7388872e97.jpg" alt="大型商城选购页面布局 | web开发实战案例">
+                  <div class="card-heading"><strong><i class="icon icon-folder-open"></i>大型商城选购页面布局 | web开发实战案例</strong></div>
+                  <span class="label label-danger"></span>
+                  <span class="label label-success">免费</span>
+                </img></a>
+              </div>
+            
+              <div class="col-md-4 col-sm-6">
+                <a href="/contents/49/2067.html" class="card"><img data-original="/upload/images/2018/6/b5b70fbaafe59eff.jpg" alt="vivo手机官网鼠标滑过的效果">
+                  <div class="card-heading"><strong><i class="icon icon-folder-open"></i>vivo手机官网鼠标滑过的效果</strong></div>
+                  <span class="label label-danger"></span>
+                  <span class="label label-success">免费</span>
+                </img></a>
+              </div>
+            
+              <div class="col-md-4 col-sm-6">
+                <a href="/contents/49/2064.html" class="card"><img data-original="/upload/images/2018/6/9e24edf0168e67e3.gif" alt="css3+jq百叶窗切换图片">
+                  <div class="card-heading"><strong><i class="icon icon-folder-open"></i>css3+jq百叶窗切换图片</strong></div>
+                  <span class="label label-danger"></span>
+                  <span class="label label-success">免费</span>
+                </img></a>
+              </div>
+            
+              <div class="col-md-4 col-sm-6">
+                <a href="/contents/49/2063.html" class="card"><img data-original="/upload/images/2018/6/803a611de9dcd7d5.gif" alt="css3+jq自适应切换">
+                  <div class="card-heading"><strong><i class="icon icon-folder-open"></i>css3+jq自适应切换</strong></div>
+                  <span class="label label-danger"></span>
+                  <span class="label label-success">免费</span>
+                </img></a>
+              </div>
+            
+              <div class="col-md-4 col-sm-6">
+                <a href="/contents/49/2048.html" class="card"><img data-original="/upload/images/2018/5/3cf3eea48fc5c722.png" alt="小米官网吸顶盒特效">
+                  <div class="card-heading"><strong><i class="icon icon-folder-open"></i>小米官网吸顶盒特效</strong></div>
+                  <span class="label label-danger"></span>
+                  <span class="label label-success">免费</span>
+                </img></a>
+              </div>
+            
+              <div class="col-md-4 col-sm-6">
+                <a href="/contents/49/2047.html" class="card"><img data-original="/upload/images/2018/5/707b6a57ca037552.jpg" alt="门户类热门排行榜特效">
+                  <div class="card-heading"><strong><i class="icon icon-folder-open"></i>门户类热门排行榜特效</strong></div>
+                  <span class="label label-danger"></span>
+                  <span class="label label-success">免费</span>
+                </img></a>
+              </div>
+            
+              <div class="col-md-4 col-sm-6">
+                <a href="/contents/49/2046.html" class="card"><img data-original="/upload/images/2018/5/475381176fda7cca.jpg" alt="HTML5最新技术Drag实现购物车拖拽商品结算特效">
+                  <div class="card-heading"><strong><i class="icon icon-folder-open"></i>HTML5最新技术Drag实现购物车拖拽商品结算特效</strong></div>
+                  <span class="label label-danger"></span>
+                  <span class="label label-success">免费</span>
+                </img></a>
+              </div>
+            
+              <div class="col-md-4 col-sm-6">
+                <a href="/contents/49/2045.html" class="card"><img data-original="/upload/images/2018/5/1f93b2b33e15476a.jpg" alt="大型企业网站--楼梯式导航特效">
+                  <div class="card-heading"><strong><i class="icon icon-folder-open"></i>大型企业网站--楼梯式导航特效</strong></div>
+                  <span class="label label-danger"></span>
+                  <span class="label label-success">免费</span>
+                </img></a>
+              </div>
+            
+              <div class="col-md-4 col-sm-6">
+                <a href="/contents/49/2043.html" class="card"><img data-original="/upload/images/2018/5/e0743089e519630e.gif" alt="Vic 完全解析之触发加载和刷新动画">
+                  <div class="card-heading"><strong><i class="icon icon-folder-open"></i>Vic 完全解析之触发加载和刷新动画</strong></div>
+                  <span class="label label-danger"></span>
+                  <span class="label label-success">免费</span>
+                </img></a>
+              </div>
+            
+              <div class="col-md-4 col-sm-6">
+                <a href="/contents/49/2042.html" class="card"><img data-original="/upload/images/2018/5/5b76ab92eba47716.jpg" alt="jQuery模拟腾讯后台添加与删除课程实战">
+                  <div class="card-heading"><strong><i class="icon icon-folder-open"></i>jQuery模拟腾讯后台添加与删除课程实战</strong></div>
+                  <span class="label label-danger"></span>
+                  <span class="label label-success">免费</span>
+                </img></a>
+              </div>
+            
+              <div class="col-md-4 col-sm-6">
+                <a href="/contents/49/1065.html" class="card"><img data-original="/upload/images/2018/4/b20d4828a9a3e521.jpg" alt="jQuery仿途牛旅游网景点实时导航">
+                  <div class="card-heading"><strong><i class="icon icon-folder-open"></i>jQuery仿途牛旅游网景点实时导航</strong></div>
+                  <span class="label label-danger"></span>
+                  <span class="label label-success">免费</span>
+                </img></a>
+              </div>
+            
+              <div class="col-md-4 col-sm-6">
+                <a href="/contents/49/1064.html" class="card"><img data-original="/upload/images/2018/4/c884bfad31a095b9.jpg" alt="微信二维码电子名片开发">
+                  <div class="card-heading"><strong><i class="icon icon-folder-open"></i>微信二维码电子名片开发</strong></div>
+                  <span class="label label-danger"></span>
+                  <span class="label label-success">免费</span>
+                </img></a>
+              </div>
+            
+              <div class="col-md-4 col-sm-6">
+                <a href="/contents/49/1063.html" class="card"><img data-original="/upload/images/2018/4/45f5466e692af917.jpg" alt="原生js结合css3实现3D拖拽旋转相册">
+                  <div class="card-heading"><strong><i class="icon icon-folder-open"></i>原生js结合css3实现3D拖拽旋转相册</strong></div>
+                  <span class="label label-danger"></span>
+                  <span class="label label-success">免费</span>
+                </img></a>
+              </div>
+            
+              <div class="col-md-4 col-sm-6">
+                <a href="/contents/49/1062.html" class="card"><img data-original="/upload/images/2018/4/78afc05a4a971ae5.jpg" alt="QQ空间相册图片上传功能">
+                  <div class="card-heading"><strong><i class="icon icon-folder-open"></i>QQ空间相册图片上传功能</strong></div>
+                  <span class="label label-danger"></span>
+                  <span class="label label-success">免费</span>
+                </img></a>
+              </div>
+            
+              <div class="col-md-4 col-sm-6">
+                <a href="/contents/49/1061.html" class="card"><img data-original="/upload/images/2018/4/cc5fce62708ce16d.png" alt="jQuery仿艺龙旅行网图片手风琴特效">
+                  <div class="card-heading"><strong><i class="icon icon-folder-open"></i>jQuery仿艺龙旅行网图片手风琴特效</strong></div>
+                  <span class="label label-danger"></span>
+                  <span class="label label-success">免费</span>
+                </img></a>
+              </div>
+            
+              <div class="col-md-4 col-sm-6">
+                <a href="/contents/49/1060.html" class="card"><img data-original="/upload/images/2018/4/85683a27b0024623.jpg" alt="网页登陆弹弹框（带重力惯性），前端开发实战小项目案例">
+                  <div class="card-heading"><strong><i class="icon icon-folder-open"></i>网页登陆弹弹框（带重力惯性），前端开发实战小项目案例</strong></div>
+                  <span class="label label-danger"></span>
+                  <span class="label label-success">免费</span>
+                </img></a>
+              </div>
+            
+              <div class="col-md-4 col-sm-6">
+                <a href="/contents/49/1058.html" class="card"><img data-original="/upload/images/2018/4/aaf44bc65ea9bf53.jpg" alt="晚会抽奖系统教程视频，js实战小项目案例">
+                  <div class="card-heading"><strong><i class="icon icon-folder-open"></i>晚会抽奖系统教程视频，js实战小项目案例</strong></div>
+                  <span class="label label-danger"></span>
+                  <span class="label label-success">免费</span>
+                </img></a>
+              </div>
+            
+              <div class="col-md-4 col-sm-6">
+                <a href="/contents/49/1057.html" class="card"><img data-original="/upload/images/2018/4/29d23e1bcbb0f07f.jpg" alt="电影预告轮播特效，jq/js实战案例">
+                  <div class="card-heading"><strong><i class="icon icon-folder-open"></i>电影预告轮播特效，jq/js实战案例</strong></div>
+                  <span class="label label-danger"></span>
+                  <span class="label label-success">免费</span>
+                </img></a>
+              </div>
+            
+              <div class="col-md-4 col-sm-6">
+                <a href="/contents/49/1056.html" class="card"><img data-original="/upload/images/2018/4/f2d496a68b7f2165.jpg" alt="瑞丽网banner图左右切换特效 | js实战案例">
+                  <div class="card-heading"><strong><i class="icon icon-folder-open"></i>瑞丽网banner图左右切换特效 | js实战案例</strong></div>
+                  <span class="label label-danger"></span>
+                  <span class="label label-success">免费</span>
+                </img></a>
+              </div>
+            
+              <div class="col-md-4 col-sm-6">
+                <a href="/contents/49/82.html" class="card"><img data-original="/upload/images/2018/4/84541e08a44a9e3c.jpg" alt="3D立方体旋转banner图 | 实战开发">
+                  <div class="card-heading"><strong><i class="icon icon-folder-open"></i>3D立方体旋转banner图 | 实战开发</strong></div>
+                  <span class="label label-danger"></span>
+                  <span class="label label-success">免费</span>
+                </img></a>
+              </div>
+            
+              <div class="col-md-4 col-sm-6">
+                <a href="/contents/49/81.html" class="card"><img data-original="/upload/images/2018/4/29657937237b7c3c.jpg" alt="360图片集展示特效案例 | 实战开发">
+                  <div class="card-heading"><strong><i class="icon icon-folder-open"></i>360图片集展示特效案例 | 实战开发</strong></div>
+                  <span class="label label-danger"></span>
+                  <span class="label label-success">免费</span>
+                </img></a>
+              </div>
+            
+              <div class="col-md-4 col-sm-6">
+                <a href="/contents/49/80.html" class="card"><img data-original="/upload/images/2018/4/ab805687c437eaa4.jpg" alt="360私有云单页面开发">
+                  <div class="card-heading"><strong><i class="icon icon-folder-open"></i>360私有云单页面开发</strong></div>
+                  <span class="label label-danger"></span>
+                  <span class="label label-success">免费</span>
+                </img></a>
+              </div>
+            
+            
+              <ul class="pager pager-loose">
+                <li class="previous disabled"><a href="your/nice/url">« 上一页</a></li>
+                <li class="active"><a href="javascript:;">1</a></li><li class=""><a href="/channels/49_2.html">2</a></li>
+                <li class="next"><a href="/channels/49_2.html">» 下一页</a></li>
+              </ul>
+            
+          </div>
+        </div>
+        <!--页脚-->
+        <footer class="footer">
+  <div class="container">
+    <div class="rwo">
+      <div class="col-md-12">
+        <p>本站内容采自互联网，如果某些内容侵犯了你的权益，请立即联系我，我将尽快删除相关内容，联系邮箱：1371096680@qq.com</p>
+        <p>Copyright © 2017-2018 小呆导航（webjike.com）All Rights Reserved</p>
+      </div>
+    </div>
+  </div>
+</footer>
+      </div><!--内容区域-->
+    </div>
+    <div id="get-top" title="回到顶部"><i class="icon icon-arrow-up"></i></div>
+    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1261855216'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1261855216' type='text/javascript'%3E%3C/script%3E"));</script>
+    <!--[if lt IE 9]>
+    <script src="dist/lib/ieonly/html5shiv.js"></script>
+    <script src="dist/lib/ieonly/respond.js"></script>
+    <![endif]-->
+    <!-- jQuery (ZUI中的Javascript组件依赖于jQuery) -->
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <!-- ZUI Javascript组件 -->
+    <script src="/dist/js/zui.js"></script>
+    <script src="/js/jquery.lazyload.min.js"></script>
+    <script src="/js/js.js"></script>
+    <script>
+      $(function() {
+         $("#content img").lazyload({effect: "fadeIn"});
+      });
+    </script>
+  </body>
+</html>
+
+

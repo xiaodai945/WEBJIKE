@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SiteTemplate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SiteTemplateName>小呆导航</SiteTemplateName>
+  <WebSiteUrl>http://webjike.com</WebSiteUrl>
+  <PicFileName />
+  <Description>小呆导航精简版模板源码，此模板尚未完全优化完毕，后续内容更新请查看GitHub提交的文件，或自己更新使用文档熟悉操作后可自行修改完善；源码采用了较宽松的MIT开源协议，你可以将此模板用于商业用途，你也可以随意修改源码，生成一个属于你的专属模板，但请你自觉遵守协议内容，并保留版权声明。</Description>
+</SiteTemplate>

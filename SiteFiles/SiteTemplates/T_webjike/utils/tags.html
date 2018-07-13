@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<!--
+ * Copyright statement *
+ * This site template is provided free of charge by WEBJIKE
+ * Official Website: http://webjike.com
+ * GitHub：https://github.com/xiaodai945/webjike
+-->
+<html lang="zh-cn">
+  <head>
+    <!--头部信息-->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>小呆导航 &nbsp;- 可自定义的简洁网址导航</title>
+    <meta name="keywords" content="小呆导航,网址导航,前端导航,设计师导航,CG导航,工作导航,自定义导航,简洁导航,网站大全">
+    <meta name="description" content="小呆导航是一个可自定义的简洁多领域网址导航，收录了前端开发、设计师、影视后期、日常办公等领域优质网站，为广大用户提供高效率的上网导航服务。">
+<!-- zui -->
+<link rel="shortcut icon"  type="image/x-icon" href="/beta_ceshi/favicon.png">
+<link rel="stylesheet" href="http://cdn.bootcss.com/zui/1.8.1/css/zui.min.css">
+<link href="/beta_ceshi/css/style.css" rel="stylesheet">
+<link href="/beta_ceshi/css/media.css" rel="stylesheet">
+<link href="/beta_ceshi/css/font-awesome.min.css" rel="stylesheet">
+
+  </head>
+  <body>
+<script src="/sitefiles/assets/components/lodash-4.17.4.min.js" type="text/javascript"></script><script src="/sitefiles/assets/components/stlClient.js" type="text/javascript"></script>
+
+    <!--[if lt IE 8]>
+    <div class="alert alert-danger">您正在使用 <strong>过时的</strong> 浏览器. 是时候 <a href="http://browsehappy.com/">更换一个更好的浏览器</a> 来提升用户体验.</div>
+    <![endif]-->
+    <!--头部导航条-->
+    <header>
+      
+<div class="main">
+<h1 class="logo">
+  <a href="/beta_ceshi/index.html">
+    <img src="/beta_ceshi/images/logo.png">
+    <span>源码测试</span>
+  </a>
+</h1>
+<nav class="nav">
+  <ul>
+    <!--获取导航链接/从首页向下第一个栏目起/只显示nav栏目组-->
+    
+      <li><a href="/beta_ceshi/channels/336.html">教程资源</a></li>
+    
+      <li><a href="/beta_ceshi/channels/349.html">个人博客</a></li>
+    
+      <li><a href="/beta_ceshi/channels/350.html">在线留言</a></li>
+    
+      <li><a href="/beta_ceshi/channels/419.html">友情链接</a></li>
+    
+      <li><a href="/beta_ceshi/channels/424.html">关于本站</a></li>
+    
+  </ul>
+</nav>
+<div class="head-btn visible-lg">
+  <a href="javascript:;" class="sethome" data-toggle="tooltip" data-placement="bottom" title="设为首页" onclick="setHome(this,window.location);"><i class="fa fa-home"></i></a>
+  <a href="javascript:;" class="customize" data-toggle="tooltip" data-placement="bottom" title="自定义模式"><i class="fa fa-cog"></i></a>
+  <a href="javascript:;" class="theme" data-toggle="tooltip" data-placement="bottom" title="更换主题"><i class="fa fa-image"></i></a>
+  <a href="/beta_ceshi/v1/index.html" target="_blank" data-toggle="tooltip" data-placement="bottom" title="切回旧版"><i class="fa fa-refresh"></i></a>
+  <a href="javascript:;" id="submit_URL" data-toggle="tooltip" data-placement="bottom" title="网址提交"><i class="fa fa-pencil-square-o"></i></a>
+</div>
+<button class="bar-btn visible-xs visible-sm">
+  <span class="icon-bar bar-line1"></span>
+  <span class="icon-bar bar-line2"></span>
+</button>
+<button class="nav-btn visible-xs visible-sm">
+  <span class="icon-line top"></span>
+  <span class="icon-line middle"></span>
+  <span class="icon-line bottom"></span>
+</button>
+</div>
+
+    </header>
+    <div id="content">
+      <!--导航条-->
+      <div class="mask"></div>
+      <div class="left-bar">
+        <div class="header"><h2>导航目录</h2></div>
+        <nav class="menu" data-ride="menu">
+          <ul id="treeMenu" class="tree tree-menu" data-ride="tree">
+            
+              <li>
+                <a href="/beta_ceshi/web.html"><i class="fa fa-html5"></i>前端开发</a>
+                <ul>
+                  <!--从首页向下循化3级栏目列表：0为首页-->
+                  
+                    <!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/beta_ceshi/web.html#row-1"><i class="fa fa-video-camera"></i>视频教程</a></li>
+                  
+                    <!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/beta_ceshi/web.html#row-2"><i class="fa fa-book"></i>在线学习</a></li>
+                  
+                </ul>
+              </li>
+            
+              <li>
+                <a href="/beta_ceshi/ui.html"><i class="fa fa-dribbble"></i>界面设计</a>
+                <ul>
+                  <!--从首页向下循化3级栏目列表：0为首页-->
+                  
+                    <!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/beta_ceshi/ui.html#row-1"><i class="fa fa-graduation-cap"></i>学习教程</a></li>
+                  
+                    <!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/beta_ceshi/ui.html#row-2"><i class="fa fa-lightbulb-o"></i>灵感采集</a></li>
+                  
+                </ul>
+              </li>
+            
+              <li>
+                <a href="/beta_ceshi/cg.html"><i class="fa fa-youtube-play"></i>影视后期</a>
+                <ul>
+                  <!--从首页向下循化3级栏目列表：0为首页-->
+                  
+                    <!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/beta_ceshi/cg.html#row-1"><i class="fa fa-graduation-cap"></i>学习教程</a></li>
+                  
+                    <!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/beta_ceshi/cg.html#row-2"><i class="fa fa-magic"></i>特效动画</a></li>
+                  
+                </ul>
+              </li>
+            
+              <li>
+                <a href="/beta_ceshi/offlce.html"><i class="fa fa-keyboard-o"></i>日常办公</a>
+                <ul>
+                  <!--从首页向下循化3级栏目列表：0为首页-->
+                  
+                    <!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/beta_ceshi/offlce.html#row-1"><i class="fa fa-fire"></i>热门推荐</a></li>
+                  
+                    <!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/beta_ceshi/offlce.html#row-2"><i class="fa fa-dashboard"></i>效率资源</a></li>
+                  
+                </ul>
+              </li>
+            
+           </ul>
+        </nav>
+        <div class="menu-about">
+          <p>工作 / 学习 / 生活 / 网址导航</p>
+          <!--版权申明，请遵守MIT开源协议，勿删除-->
+          <p>Powered by <a href="http://webjike.com" target="_blank" style="color:#98c1ff">小呆导航</a></p>
+        </div>
+      </div>
+      <!--内容-->
+      <div class="main">
+        <div class="container mainContent">
+          <div class="row article-box">
+            <div class="col-md-8">
+              <ul>
+                <span id="ajaxElement_1_134"></span>
+<script type="text/javascript" language="javascript">
+function stlDynamic_ajaxElement_1_134(pageNum)
+{
+    var url = "/api/sys/stl/actions/dynamic?" + StlClient.getQueryString();
+    var data = {
+    siteId: 335,
+    pageChannelId: 335,
+    pageContentId: 0,
+    pageTemplateId: 115,
+    isPageRefresh: false,
+    pageUrl: 'WVtnR6fUhhMHHZG2eFwIhOnYfDhqW7X5VOuR90add0dIW0add0k0equals0',
+    ajaxDivId: 'ajaxElement_1_134',
+    templateContent: 'e0add0py6RoeF0slash07seuQERdJ70slash0ZvDtgIg0slash0v7OTPRKMyt6AYNxdr3XD4Yg233Uz3gspfLJwcfuVfGxKuyvZGEitvzN8Vt09hGqCMz0slash0x5zdwmVfHKNwnwlakANjna3G3t040slash0577pqyi07DQZ95wnRsmcU7g9NeVqFj0add0wGrSVASjRlOtBHVdHp90add00slash0cI1nHpMEzW4An4XtQ4wEP7IzfXxnATKQRoU39Zyj81pF0slash0gZZp5Q83RCzfOmYwtJqtjUM7UMgNDLYEgAqndVBFv9bWaiq0slash0e5BZsRR1IaQY50slash07x5TLrLMe5DUvIjdpXamht2Nk6KtuBJuPxpTqYfHQ3QS10add0Akpaw9X1qk0slash0dfnxSK1kivk5mKB0slash0YH0add0F34T7ZUQCUepBuGQZMkQGnoCp1hSk1x3r1RIl9es4i0slash02vmD9sWwFC2lJaAZ2y4etw6t8jRmDh2guRLKG2bnsRudN0add0yxKrA0slash05WX0slash0DUR0QZcgLZN0add0azLYaggwEp5x7K0add0xhURXq09ME6FlsT7xTvXZ0G0slash07L3tHU0add02lOgTqPkMtbSb0slash0OEWoMIHBAng7JJ0RUUOT0slash0lYpfkulTDk5GFPJGcvTwqakUlxeP1Bkpv0add0w7jOu50add0ucAHECLaaaR35i5alWMOb6GBZrqQISzPji0add0ILpm572AIyxbmIhiAmUhjIoj8ZnTj442FC25yS0add0dFmYt0slash0iah3V6hR86PztkL9SCChbWrkkTyZ0add0LYT0add0p13fwaNBTfiMr9g8RNKtFUSOyGOLQot3nOig0slash0c2vAP0add0gR4IwdynBXLSJsSzS0f6zWvIAOc0add0t0slash0tUjtfE0slash0t0slash0tZCC6fBumfglHf6wskTncH4tYAG7t960slash0MTfGx01cp4NH91Giy4JsBZNQ268WBdjU2lGTz48YezJA6bGY9uvqoQyIMaKhseVFt5vxOzVpA9yGPibN0add0A1enMdL5LyVEVNvflCjFmRo2pni0PpdRvizFdOD1zuUUq6SJzYXNAFEysG6ztOoEGbb0T6CfvgVDDovm2ovI2E9gjT0add06RP3rg3VhBoiyAMqALYJoeKZ0add0w0slash0BbWA0slash0QJhmZVvTnLNyf0slash08ffE4bRhoPzXQTqUkD6EoR1IE9oRxrYLfiiVsOhQ5MFXVJ0add0SwMKHzD3OvqX00add0cSESLUGRD5kd1QJsrbGjJwaxdg3Z70add0akNuCrx0sTChaQ0gE4AUpnZs0add0CYyRCXvfBxEMcGd17yKnjb7hqleuqrs55Axlff3zG4lVDsIsy0add0AU4wGVEiYJPfDhr0T6Htf5iRSBnCm0slash04XZlIZyJ22ZNwviyUXYpM1Z4x4a2vQ0add00add05OtRJ4Dj8ntBcBS693wjwPkbFeYht71Kl2678E0add0GaEgZ0slash0Bk2qYRq11FziDFROSOcDYRghA0add04w2spZZ2i6G9aVTogW9Nslqi9BFkj5fnB6I00lJY08QiybrZD0add0d8gb57eaq5GK2c09RHyHioRgxgvkEebEn69oVpccDoiHV9VfXbSDGyUJQzvHzKCjlSXNPD50zeFUtQzqD4I3f95cZwBmJkVoAj1TlNW0slash0k59oOuscdX7b8mJgg6vAwPKkCYDlyvTCwBl6Po8HCzWyH7jzBj3MGUrLfH5PELIR5KHAqpHdFO7lU9XpxuhqjZSOHvkdp3WXQy0slash0sXAsjpQ0FZP7EgjmDy9CL2HTRmPgMgq81k10slash0GCivGm4NBlOIN2x04RUW7vRRJLB8fbsaT3BTSVZ0BWe4QkOX3l3pdH5RJvs4nkljwjiB3TKI3ghumDlYLX1fPctSIole8KrzQaGK0DdBH860add0muawFl0add0hPVyhdkM7GnuBO3poGyXi0add076QJvEi7HBWLB7RPtuso0add0N0add0OYAx3tYZkYM9mRwIc9mbJ6MhF4XHMWYOhpGiDqQWXi9r6nPpD0add0K70add0F0T7s2abwXvUXjbCjWTX0D5sHiNPSupOZjKFQeucV0add0z0DHncjVBGlEA197ptp0Cw0add0Ih723ehZcGH9CeadBPeDSt4Yw0slash0XsYMQRfp8KGhiszbGimqI1'
+};
+    if (pageNum && pageNum > 0)
+    {
+        data.pageNum = pageNum;
+    }
+
+    stlClient.post(url, data, function (err, data, status) {
+        if (!err) document.getElementById("ajaxElement_1_134").innerHTML = data.html;
+    });
+}
+stlDynamic_ajaxElement_1_134(0);
+</script>
+
+              </ul>
+            </div>
+            <div class="col-md-4">
+              <div class="row">
+                <div class="col-md-12 col-sm-6">
+                  <div class="widget hot-news">
+                    <h3>热门推荐</h3>
+                    <ul>
+                      <span id="ajaxElement_2_135"></span>
+<script type="text/javascript" language="javascript">
+function stlDynamic_ajaxElement_2_135(pageNum)
+{
+    var url = "/api/sys/stl/actions/dynamic?" + StlClient.getQueryString();
+    var data = {
+    siteId: 335,
+    pageChannelId: 335,
+    pageContentId: 0,
+    pageTemplateId: 115,
+    isPageRefresh: false,
+    pageUrl: 'WVtnR6fUhhMHHZG2eFwIhOnYfDhqW7X5VOuR90add0dIW0add0k0equals0',
+    ajaxDivId: 'ajaxElement_2_135',
+    templateContent: '0slash0f7nqo7lSj45RhbO9HteS8qCvdXFi2fBXeoYOXLJpOEkl8KSlvAv3Vzfu0SrGlYcQ1HRXpPVlWC8opANin0slash0zKvoJXDB6oBcEEVU7p3NpUuY6INhZrqI869pghD1URPnHUyyRhKIfPtpi1u0nRQW8QyOEhH9X8qUetZ5iQ6e9CxGXjeju0slash0QL0add0o800slash0MxLGWfm7qExJRJs26jLdjBbsoDXHIB0gvROwcq8mpJobBX7QDm4EU2nm435DtRuNvhcUykL50FLgUERJybT9wIrYfIfDcAQAmr9w4o0z'
+};
+    if (pageNum && pageNum > 0)
+    {
+        data.pageNum = pageNum;
+    }
+
+    stlClient.post(url, data, function (err, data, status) {
+        if (!err) document.getElementById("ajaxElement_2_135").innerHTML = data.html;
+    });
+}
+stlDynamic_ajaxElement_2_135(0);
+</script>
+
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-md-12 col-sm-6">
+                  <div class="widget tags">
+                    <h3>热门标签</h3>
+                    <div class="tags-list">
+                      
+                        <a href="/beta_ceshi/utils/tags.html?tagName=文档">文档</a>
+                      
+                        <a href="/beta_ceshi/utils/tags.html?tagName=小呆导航">小呆导航</a>
+                      
+                        <a href="/beta_ceshi/utils/tags.html?tagName=开源">开源</a>
+                      
+                        <a href="/beta_ceshi/utils/tags.html?tagName=源码">源码</a>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--页脚-->
+        <footer class="footer">
+  <div class="container">
+    <div class="rwo">
+      <div class="col-md-12">
+        <p>本站内容采自互联网，如果某些内容侵犯了你的权益，请立即联系我，我将尽快删除相关内容，联系邮箱：1371096680@qq.com</p>
+        <p>Copyright © 2017-2018 小呆导航（webjike.com）All Rights Reserved</p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!--CNZZ统计代码 以下代码为小呆导航的统计代码，请及时替换掉-->
+<div style="display: none">
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1261855216'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1261855216' type='text/javascript'%3E%3C/script%3E"));</script>
+</div>
+      </div><!--内容区域-->
+    </div>
+    <div id="get-top" title="回到顶部"><i class="icon icon-arrow-up"></i></div>
+    <!--[if lt IE 9]>
+    <script src="dist/lib/ieonly/html5shiv.js"></script>
+    <script src="dist/lib/ieonly/respond.js"></script>
+    <![endif]-->
+    <!-- jQuery (ZUI中的Javascript组件依赖于jQuery) -->
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <!-- ZUI Javascript组件 -->
+    <script src="/beta_ceshi/dist/js/zui.js"></script>
+    <script src="/beta_ceshi/js/js.js"></script>
+  </body>
+</html>
+
+

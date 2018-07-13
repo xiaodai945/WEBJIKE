@@ -1,0 +1,238 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <!--头部信息-->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>电影预告轮播特效，jq/js实战案例 | 小呆导航</title>
+    <meta name="keywords" content="教程下载,视频教程下载,免费教程,前端开发教程,教程全集下载,web开发教程,免费视频教程下载,教程资源下载" />
+    <meta name="description" content="小呆导航不仅提供了便捷的上网导航，还提供了海量免费教程资源下载，程序员视频教程，平面设计视频教程，前端开发视频教程等资源下载，且全部都是免费的。" />
+<!-- zui -->
+<link rel="shortcut icon"  type="image/x-icon" href="/favicon.png">
+<link rel="stylesheet" href="https://cdn.bootcss.com/zui/1.8.1/css/zui.min.css">
+<link href="/css/style.css" rel="stylesheet">
+<link href="/css/media.css" rel="stylesheet">
+<link href="/css/font-awesome.min.css" rel="stylesheet">
+
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+    <div class="alert alert-danger">您正在使用 <strong>过时的</strong> 浏览器. 是时候 <a href="http://browsehappy.com/">更换一个更好的浏览器</a> 来提升用户体验.</div>
+    <![endif]-->
+    <!--头部导航条-->
+    <header>
+      
+<div class="main">
+<h1 class="logo">
+  <a href="/index.html">
+    <img src="/images/logo.png">
+    <span>小呆导航</span>
+  </a>
+</h1>
+<nav class="nav">
+  <ul>
+    <!--获取导航链接/从首页向下第一个栏目起/只显示nav栏目组-->
+    <li><a href="/channels/2.html" class="aa">教程资源</a></li><li><a href="/channels/3.html">高清图库</a></li><li><a href="/channels/4.html">软件下载</a></li><li><a href="/channels/5.html">个人博客</a></li><li><a href="/channels/6.html">在线留言</a></li><li><a href="/channels/149.html">友情链接</a></li><li><a href="/channels/332.html">关于本站</a></li>
+  </ul>
+</nav>
+<div class="head-btn visible-lg">
+  <a href="javascript:;" class="sethome" data-toggle="tooltip" data-placement="bottom" title="设为首页" onclick="setHome(this,window.location);"><i class="fa fa-home"></i></a>
+  <a href="javascript:;" class="customize" data-toggle="tooltip" data-placement="bottom" title="自定义模式"><i class="fa fa-cog"></i></a>
+  <a href="javascript:;" class="theme" data-toggle="tooltip" data-placement="bottom" title="更换主题"><i class="fa fa-image"></i></a>
+  <a href="/v1/index.html" target="_blank" data-toggle="tooltip" data-placement="bottom" title="切回旧版"><i class="fa fa-refresh"></i></a>
+  <a href="javascript:;" id="submit_URL" data-toggle="tooltip" data-placement="bottom" title="网址提交"><i class="fa fa-pencil-square-o"></i></a>
+</div>
+<button class="bar-btn visible-xs visible-sm">
+  <span class="icon-bar bar-line1"></span>
+  <span class="icon-bar bar-line2"></span>
+</button>
+<button class="nav-btn visible-xs visible-sm">
+  <span class="icon-line top"></span>
+  <span class="icon-line middle"></span>
+  <span class="icon-line bottom"></span>
+</button>
+</div>
+
+    </header>
+    <div id="content">
+      <!--导航条-->
+      <div class="mask"></div>
+      <div class="left-bar">
+        <div class="header"><h2>导航目录</h2></div>
+        <nav class="menu" data-ride="menu">
+          <ul id="treeMenu" class="tree tree-menu" data-ride="tree">
+            <li>
+                <a href="/web.html"><i class="fa fa-html5"></i>前端开发</a>
+                <ul>
+                  <!--从首页向下循化3级栏目列表：0为首页-->
+                  <!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-1"><i class="fa fa-video-camera"></i>视频教程</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-2"><i class="fa fa-book"></i>在线学习</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-3"><i class="fa fa-puzzle-piece"></i>碎片学习</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-4"><i class="fa fa-wrench"></i>学习工具</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-5"><i class="fa fa-server"></i>WEB公共库</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-6"><i class="fa fa-users"></i>前端组织/团队</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-7"><i class="fa fa-commenting"></i>社区/论坛</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-8"><i class="fa fa-magnet"></i>前端框架 - UI</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-9"><i class="fa fa-file-code-o"></i>前端框架 - JS</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-10"><i class="fa fa-paper-plane"></i>前端插件</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-11"><i class="fa fa-tablet"></i>移动框架</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-12"><i class="fa fa-hourglass-2"></i>预处理器</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-13"><i class="fa fa-font"></i>字体图标</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-14"><i class="fa fa-cogs"></i>构建工具</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-15"><i class="fa fa-cubes"></i>模块加载</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-16"><i class="fa fa-briefcase"></i>包管理器</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-17"><i class="fa fa-dashboard"></i>模板引擎</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-18"><i class="fa fa-gamepad"></i>游戏引擎</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-19"><i class="fa fa-sun-o"></i>代码高亮</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-20"><i class="fa fa-github"></i>代码托管</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-21"><i class="fa fa-wordpress"></i>博客系统</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-22"><i class="fa fa-jsfiddle"></i>域名/服务器</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-23"><i class="fa fa-paperclip"></i>辅助工具</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-24"><i class="fa fa-flag"></i>站长工具</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-25"><i class="fa fa-photo"></i>图片素材</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-26"><i class="fa fa-thumbs-o-up"></i>精选酷站</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-27"><i class="fa fa-globe"></i>互联网资讯</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-28"><i class="fa fa-suitcase"></i>工作/私单</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/web.html#row-29"><i class="fa fa-cloud-download"></i>应用程序</a></li>
+                </ul>
+              </li><li>
+                <a href="/ui.html"><i class="fa fa-dribbble"></i>界面设计</a>
+                <ul>
+                  <!--从首页向下循化3级栏目列表：0为首页-->
+                  <!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/ui.html#row-1"><i class="fa fa-graduation-cap"></i>学习教程</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/ui.html#row-2"><i class="fa fa-lightbulb-o"></i>灵感采集</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/ui.html#row-3"><i class="fa fa-tv"></i>界面交互</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/ui.html#row-4"><i class="fa fa-briefcase"></i>在线工具</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/ui.html#row-5"><i class="fa fa-flag"></i>icon图标</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/ui.html#row-6"><i class="fa fa-magic"></i>设计素材</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/ui.html#row-7"><i class="fa fa-photo"></i>图库素材</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/ui.html#row-8"><i class="fa fa-tint"></i>颜色搭配</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/ui.html#row-8"><i class="fa fa-font"></i>字体字形</a></li>
+                </ul>
+              </li><li>
+                <a href="/cg.html"><i class="fa fa-youtube-play"></i>影视后期</a>
+                <ul>
+                  <!--从首页向下循化3级栏目列表：0为首页-->
+                  <!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/cg.html#row-1"><i class="fa fa-graduation-cap"></i>学习教程</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/cg.html#row-2"><i class="fa fa-magic"></i>特效动画</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/cg.html#row-3"><i class="fa fa-comments"></i>资讯交流</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/cg.html#row-4"><i class="fa fa-cloud-download"></i>软件插件</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/cg.html#row-5"><i class="fa fa-camera-retro"></i>摄影摄像</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/cg.html#row-6"><i class="fa fa-folder-open"></i>素材资源</a></li>
+                </ul>
+              </li><li>
+                <a href="/offlce.html"><i class="fa fa-keyboard-o"></i>日常办公</a>
+                <ul>
+                  <!--从首页向下循化3级栏目列表：0为首页-->
+                  <!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/offlce.html#row-1"><i class="fa fa-fire"></i>热门推荐</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/offlce.html#row-2"><i class="fa fa-dashboard"></i>效率资源</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/offlce.html#row-3"><i class="fa fa-graduation-cap"></i>技能提升</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/offlce.html#row-4"><i class="fa fa-wrench"></i>在线工具</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/offlce.html#row-5"><i class="fa fa-users"></i>团队协作</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/offlce.html#row-6"><i class="fa fa-envelope"></i>电子邮箱</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/offlce.html#row-7"><i class="fa fa-book"></i>文案策划</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/offlce.html#row-7"><i class="fa fa-file-word-o"></i>文档模板</a></li><!--获取栏目的icon图标类名和栏目标题/图标类名字段在“设置管理”中添加-->
+                    <li><a href="/offlce.html#row-8"><i class="fa fa-desktop"></i>工作兼职</a></li>
+                </ul>
+              </li>
+           </ul>
+        </nav>
+        <div class="menu-about">
+          <p>工作 / 学习 / 生活 / 网址导航</p>
+          <p>@小呆导航 V2.0</p>
+        </div>
+      </div>
+      <!--内容-->
+      <div class="main">
+        <div class="container mainContent">
+          <!--内容banner-->
+          <div class="row article-box download">
+            <div class="col-md-8">
+              <article class="article">
+                <!-- 文章头部 -->
+                <h2>电影预告轮播特效，jq/js实战案例</h2>
+                <div class="row xz-info">
+                  <div class="col-lg-5 col-md-12 col-sm-6"><img src="/upload/images/2018/4/29d23e1bcbb0f07f.jpg" alt="电影预告轮播特效，jq/js实战案例"></div>
+                  <div class="col-lg-7 col-md-12 col-sm-6">
+                    <ul class="text-ellipsis">
+                      <li><span class="sub">涉及领域：</span><span>前端开发</span></li>
+                      <li><span class="sub">教程阶段：</span><span>实战案例</span></li>
+                      <li><span class="sub">教程类型：</span><span>视频教程</span></li>
+                      <li><span class="sub">下载方式：</span><span>百度网盘</span></li>
+                      <li><span class="sub">提取密码：</span><span>65m6</span></li>
+                      <li><span class="sub">更新时间：</span><span>2018-04-18</span></li>
+                    </ul>
+                    <a href="https://pan.baidu.com/s/1oTDWK_QHKXteh06cK0IsbQ" class="btn-link2" target="_blank"><i class="icon icon-download-alt"></i>网盘下载</a>
+                    <div class="bdsharebuttonbox"><span class="fenxiang">分享：</span><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a><a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a></div><script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+                  </div>
+                </div>
+                <!-- 文章正文部分 -->
+                <section class="article-con">
+                  <p style="white-space: normal;">作者很赖，没有留下任何课程介绍说明~<br/><img src="/upload/images/2018/4/bd18c13e935428b3.png" title="image.png" alt="image.png"/><strong style="font-size: 20px;"><br/></strong></p><p style="white-space: normal;"><strong style="font-size: 20px;">注意：</strong><br/></p><p style="white-space: normal;">部分教程视频可能会出现<span style="color: rgb(255, 0, 0);">广告/收费服务/VIP课程</span>等内容，请自行甄别，以免上当受骗。<br/>本套课程有<strong>小呆导航</strong>站长采自互联网，仅供学习参考使用，请勿用于其他用途！<br/>转载请标明出处，谢谢。</p>
+                </section>
+              </article>
+              <div class="comment-box">
+                <div id="SOHUCS" sid="1057"></div>
+                <script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js" ></script>
+                <script type="text/javascript"> window.changyan.api.config({ appid: 'cysMRaVDi', conf: 'prod_497bf64d75ce00fed95cba1232778dc2' }); </script>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="row">
+                <div class="col-md-12 col-sm-6">
+                  <div class="widget hot-download">
+                    <h3>热门下载</h3>
+                    <a href="/contents/30/77.html" title="JavaScript教程 js教程完全攻略 - 前端教程视频"><img src="/upload/images/2018/4/d07f722643ec3c63.jpg" />
+                          <p class="text-ellipsis">JavaScript教程 js教程完全攻略 - 前端教程视频</p>
+                          <span>2018-03-28</span></a><a href="/contents/152/1050.html" title="极客学院 | 前端开发零基础入门视频教程，HTML5开发开发知识体系图"><img src="/upload/images/2018/4/6c1078ee834adbb5.jpg" />
+                          <p class="text-ellipsis">极客学院 | 前端开发零基础入门视频教程，HTML5开发开发知识体系图</p>
+                          <span>2018-03-26</span></a>
+                  </div>
+                </div>
+                <div class="col-md-12 col-sm-6">
+                  <div class="widget hot-news">
+                    <h3>推荐文章</h3>
+                    <ul>
+                      <li><a href="/contents/5/1103.html" class="text-ellipsis" title="小呆导航使用小技巧，萌新必看">小呆导航使用小技巧，萌新必看</a></li><li><a href="/contents/5/1106.html" class="text-ellipsis" title="阿里云虚拟主机HTTPS配置方法，带你避坑">阿里云虚拟主机HTTPS配置方法，带你避坑</a></li><li><a href="/contents/5/1102.html" class="text-ellipsis" title="V2EX账号被封，对自己个人行为反思">V2EX账号被封，对自己个人行为反思</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--页脚-->
+        <footer class="footer">
+  <div class="container">
+    <div class="rwo">
+      <div class="col-md-12">
+        <p>本站内容采自互联网，如果某些内容侵犯了你的权益，请立即联系我，我将尽快删除相关内容，联系邮箱：1371096680@qq.com</p>
+        <p>Copyright © 2017-2018 小呆导航（webjike.com）All Rights Reserved</p>
+      </div>
+    </div>
+  </div>
+</footer>
+      </div><!--内容区域-->
+    </div>
+    <div id="get-top" title="回到顶部"><i class="icon icon-arrow-up"></i></div>
+    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1261855216'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1261855216' type='text/javascript'%3E%3C/script%3E"));</script>
+    <!--[if lt IE 9]>
+    <script src="dist/lib/ieonly/html5shiv.js"></script>
+    <script src="dist/lib/ieonly/respond.js"></script>
+    <![endif]-->
+    <!-- jQuery (ZUI中的Javascript组件依赖于jQuery) -->
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <!-- ZUI Javascript组件 -->
+    <script src="/dist/js/zui.js"></script>
+    <script src="/layer/layer.js"></script>
+    <script src="/js/js.js"></script>
+  </body>
+</html>
+
+
