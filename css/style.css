@@ -9,7 +9,7 @@ i.icon,i.fa{ margin-right: 6px }
 /*自定义模式*/
 .customize-mode-tips{
   position: fixed;
-  top: -70px;
+  top: -75px;
   left: 50%;
   width: 500px;
   margin-left: -250px;

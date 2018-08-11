@@ -57,11 +57,11 @@
             <div class="container-fluid">
               <div class="row">
                 <stl:channels channelIndex="首页导航">
-                  <div class="col-md-4 col-sm-6">
+                  <div class="col-md-4 col-sm-6 i-link-box">
                     <div class="row">
                       <div class="col-xs-12"><strong class="link-list-tit" id="{stl:channel type=link_list_tit_ID}">{channel.Title}</strong><input class="edit-category"></div>
                       <stl:contents>
-                      <div class="col-xs-4"><stl:a class="link-list-a text-ellipsis" id="{content.Id}" target="_blank">{content.Title}</stl:a><span class="bianji">编辑</span></div>
+                      <div class="col-xs-4"><stl:a class="link-list-a" id="{content.Id}" target="_blank">{content.Title}</stl:a><span class="bianji">编辑</span></div>
                       </stl:contents>
                     </div>
                   </div>
@@ -113,4 +113,62 @@
                 <img src="{Stl.SiteUrl}/images/default-bg.png">
                 <p>默认主题</p>
                <i class="fa fa-check-circle-o"></i> 
-              </
+              </li>
+              <li data-bgid="bg1">
+                <img src="{Stl.SiteUrl}/images/bg1-bg.png">
+                <p>山峰</p>
+                <i class="fa fa-check-circle-o"></i>
+              </li>
+              <li data-bgid="bg2">
+                <img src="{Stl.SiteUrl}/images/bg2-bg.png">
+                <p>璀璨星空</p>
+                <i class="fa fa-check-circle-o"></i> 
+              </li>
+              <li data-bgid="bg3">
+                <img src="{Stl.SiteUrl}/images/bg3-bg.jpg">
+                <p>暖色街道</p>
+                <i class="fa fa-check-circle-o"></i>
+              </li>
+              <li data-bgid="bg4">
+                <img src="{Stl.SiteUrl}/images/bg4-bg.jpg">
+                <p>幽静森林</p>
+                <i class="fa fa-check-circle-o"></i>
+              </li>
+              <li data-bgid="bg5">
+                <img src="{Stl.SiteUrl}/images/bg5-bg.jpg">
+                <p>日落</p>
+                <i class="fa fa-check-circle-o"></i>
+              </li>
+              <li data-bgid="bg6">
+                <img src="{Stl.SiteUrl}/images/bg6-bg.png">
+                <p>秋色野外</p>
+                <i class="fa fa-check-circle-o"></i>
+              </li>
+              <li data-bgid="bg7">
+                <img src="{Stl.SiteUrl}/images/bg7-bg.png">
+                <p>绿色植物</p>
+                <i class="fa fa-check-circle-o"></i>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="theme-panel-muen">
+          <button class="btn btn-primary btn-lg" type="button" id="okay">保存</button>
+          <button class="btn btn-lg" type="button" id="cancel">取消</button>
+        </div>
+      </div>
+    </div>
+    <div id="get-top" title="回到顶部"><i class="icon icon-arrow-up"></i></div>
+    <script src="https://s11.cnzz.com/z_stat.php?id=1261855216&web_id=1261855216" language="JavaScript"></script>
+    <!--[if lt IE 9]>
+    <script src="dist/lib/ieonly/html5shiv.js"></script>
+    <script src="dist/lib/ieonly/respond.js"></script>
+    <![endif]-->
+    <!-- jQuery (ZUI中的Javascript组件依赖于jQuery) -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/zui/1.8.1/lib/jquery/jquery.js"></script>
+    <!-- ZUI Javascript组件 -->
+    <script src="{Stl.SiteUrl}/dist/js/zui.js"></script>
+    <script src="{Stl.SiteUrl}/layer/layer.js"></script>
+    <script src="{Stl.SiteUrl}/js/js.js?v=6.2.4"></script>
+  </body>
+</html>

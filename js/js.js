@@ -366,4 +366,35 @@ var _hmt = _hmt || [];
   var s = document.getElementsByTagName("script")[0]; 
   s.parentNode.insertBefore(hm, s);
 })();
+    
+/*
+ * 2018-6-12更新
+ * 解决在低分辨率下首页内容过高导致滚动条出现，影响主题背景图片不全屏的问题
+ * 解决方式：对于屏幕分辨率高度低于845px显示器，改变首页的内容为6块区域。
+ */
 
+(function(){
+  //当浏览器窗口被调整大小时触发
+  window.onresize = function(){
+    ShowHideElement("i-link-box","linkList-item",845);
+  }
+  window.onload = function(){
+    ShowHideElement("i-link-box","linkList-item",845); 
+  }
+  function ShowHideElement(Element1, Element2, Vaule){
+    var Person = document.getElementsByClassName(Element1);
+    var BoxHeight = document.getElementsByClassName(Element2);
+    var WindowHeight = window.innerHeight||document.body.clientHeight;
+    //遍历获取到的元素
+    for(var i=6; i<Person.length; i++){
+      if(WindowHeight <= Vaule && deviceVal === "pc"){
+        Person[i].style.display = "none";
+        BoxHeight[0].style.marginTop="5px";
+      }else{
+        Person[i].style.display = "block";
+        BoxHeight[0].style.marginTop="0px";
+      }
+    }
+  }
+  window.ShowHideElement = ShowHideElement;
+}());
