@@ -1,6 +1,6 @@
 ![image](http://wx3.sinaimg.cn/large/006CFM4pgy1fvierx6ksvj31e00vf4as.jpg)
 
-提示：由于版权声明被无视，所有本项目已停止更新
+提示：由于版权声明被无视，本项目已停止更新
 
 # Hello World
 欢迎使用小呆导航源码，这一个非常棒的开始.
