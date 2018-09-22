@@ -1,3 +1,5 @@
+![image](http://wx3.sinaimg.cn/mw690/006CFM4pgy1fvierx6ksvj31e00vf4as.jpg)
+
 # Hello World
 欢迎使用小呆导航源码，这一个非常棒的开始.
 
